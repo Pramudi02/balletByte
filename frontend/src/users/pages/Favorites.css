@@ -1,0 +1,159 @@
+.favorites-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.favorites-header {
+  margin-bottom: 30px;
+}
+
+.favorites-header h1 {
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.favorites-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.favorites-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: #ccc;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  color: #ffd700;
+  border-bottom: 2px solid #ffd700;
+}
+
+.tab-button:hover {
+  color: #ffd700;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.favorite-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.favorite-card:hover {
+  border-color: #ffd700;
+  transform: translateY(-2px);
+}
+
+.favorite-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.favorite-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.favorite-info h3 {
+  color: #ffd700;
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.favorite-info p {
+  color: #ccc;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.favorite-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.action-button {
+  background: #333;
+  border: none;
+  color: #ccc;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.action-button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+.remove-button {
+  background: #dc3545;
+  color: white;
+}
+
+.remove-button:hover {
+  background: #c82333;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #ccc;
+}
+
+.empty-state h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.empty-button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.empty-button:hover {
+  background: #e6c200;
+  transform: translateY(-1px);
+} 
