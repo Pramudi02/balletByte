@@ -57,29 +57,39 @@
 
 .hero-quote h1 {
   font-size: 3.5rem;
-  color: #ffd700;
+  color: #d4af37;
   margin-bottom: 20px;
   line-height: 1.2;
   font-style: italic;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .quote-author {
-  color: #ccc;
+  color: #b8860b;
   font-size: 1.2rem;
   font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
 }
 
 .hero-description h2 {
-  color: #ffd700;
+  color: #d4af37;
   font-size: 2.5rem;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .hero-description p {
-  color: #ccc;
+  color: #e6e6e6;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
 }
 
 .hero-stats {
@@ -96,15 +106,19 @@
   display: block;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #ffd700;
+  color: #d4af37;
   margin-bottom: 5px;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .stat-label {
-  color: #ccc;
+  color: #b8860b;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
 }
 
 /* Section Styles */
@@ -132,24 +146,29 @@
 }
 
 .section-text h2 {
-  color: #ffd700;
+  color: #d4af37;
   font-size: 2.5rem;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
   gap: 15px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .section-icon {
   font-size: 2rem;
-  color: #ffd700;
+  color: #d4af37;
 }
 
 .section-text p {
-  color: #ccc;
+  color: #e6e6e6;
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 30px;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
 }
 
 .feature-list {
@@ -159,18 +178,20 @@
 }
 
 .feature-list li {
-  color: #ccc;
+  color: #e6e6e6;
   font-size: 1.1rem;
   margin-bottom: 15px;
   padding-left: 30px;
   position: relative;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
 }
 
 .feature-list li::before {
   content: '★';
   position: absolute;
   left: 0;
-  color: #ffd700;
+  color: #d4af37;
   font-size: 1.2rem;
 }
 
@@ -194,7 +215,7 @@
 
 .cta-button {
   display: inline-block;
-  background: #ffd700;
+  background: #d4af37;
   color: #000;
   padding: 15px 30px;
   border-radius: 30px;
@@ -202,14 +223,18 @@
   font-weight: bold;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  border: 2px solid #ffd700;
+  border: 2px solid #d4af37;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .cta-button:hover {
   background: transparent;
-  color: #ffd700;
+  color: #d4af37;
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
 }
 
 /* CTA Section */
@@ -220,18 +245,23 @@
 }
 
 .cta-content h2 {
-  color: #ffd700;
+  color: #d4af37;
   font-size: 3rem;
   margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cta-content p {
-  color: #ccc;
+  color: #e6e6e6;
   font-size: 1.3rem;
   margin-bottom: 40px;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
 }
 
 .cta-buttons {
@@ -252,12 +282,12 @@
 
 .cta-button.secondary {
   background: transparent;
-  color: #ffd700;
-  border: 2px solid #ffd700;
+  color: #d4af37;
+  border: 2px solid #d4af37;
 }
 
 .cta-button.secondary:hover {
-  background: #ffd700;
+  background: #d4af37;
   color: #000;
 }
 
