@@ -1,11 +1,11 @@
 import React from 'react'
-import CelebrityDashboard from './celebrities/pages/CelebrityDashboard.tsx'
+import CelebrityHome from './celebrities/pages/CelebrityHome/CelebrityHome.tsx'
 import './App.css'
 
 function App() {
   return (
     <div className="app">
-      <CelebrityDashboard />
+      <CelebrityHome />
     </div>
   )
 }
