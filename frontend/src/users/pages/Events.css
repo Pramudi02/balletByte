@@ -1,0 +1,156 @@
+.events-page {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.events-header {
+  margin-bottom: 30px;
+}
+
+.events-header h1 {
+  color: #ffd700;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.events-header p {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.events-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  background: #333;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.filter-button.active {
+  background: #ffd700;
+  color: #000;
+  border-color: #ffd700;
+}
+
+.filter-button:hover {
+  background: #ffd700;
+  color: #000;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  border-color: #ffd700;
+  transform: translateY(-2px);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-content {
+  padding: 20px;
+}
+
+.event-title {
+  color: #ffd700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.event-description {
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.event-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.event-date {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.event-location {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.event-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.event-button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.event-button:hover {
+  background: #e6c200;
+  transform: translateY(-1px);
+}
+
+.secondary-button {
+  background: #333;
+  color: #ccc;
+}
+
+.secondary-button:hover {
+  background: #555;
+  color: #fff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #ccc;
+}
+
+.empty-state h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+} 
