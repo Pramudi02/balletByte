@@ -13,31 +13,10 @@ const Home = () => {
         </div>
         <div className="hero-content">
           <div className="hero-quote">
-            <h1>"Love, faith and respect are what makes a true star!"</h1>
-            <p className="quote-author">- Yousra</p>
+            <h1>Hire Top Celebrities & Talent for Your Next Event</h1>
+            <p className="quote-author">Connecting You With Stars, Effortlessly</p>
           </div>
-          <div className="hero-description">
-            <h2>Welcome to StarConnect</h2>
-            <p>
-              The premier platform connecting fans with their favorite celebrities. 
-              Experience exclusive behind-the-scenes content, direct messaging, 
-              and unforgettable events with the stars you love.
-            </p>
-            <div className="hero-stats">
-              <div className="stat-item">
-                <span className="stat-number">50K+</span>
-                <span className="stat-label">Active Users</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">500+</span>
-                <span className="stat-label">Celebrities</span>
-              </div>
-              <div className="stat-item">
-                <span className="stat-number">1000+</span>
-                <span className="stat-label">Events</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -47,24 +26,25 @@ const Home = () => {
           <div className="section-text">
             <h2>
               <FaStar className="section-icon" />
-              Discover Celebrities
+              Find the Perfect Celebrity
             </h2>
             <p>
-              Explore our extensive collection of verified celebrities from music, film, sports, 
-              and entertainment. Connect with your idols and discover new stars to follow.
+              Browse our curated list of actors, musicians, sports stars, and influencers. 
+              Whether it's a corporate event, wedding, brand campaign, or private party, 
+              we help you connect with the right talent for your needs.
             </p>
             <ul className="feature-list">
-              <li>Direct messaging with celebrities</li>
-              <li>Exclusive behind-the-scenes content</li>
-              <li>Verified celebrity profiles</li>
-              <li>Real-time updates and notifications</li>
+              <li>Direct booking with verified celebrities</li>
+              <li>Browse by category, budget, and availability</li>
+              <li>Transparent pricing and secure contracts</li>
+              <li>Personalized recommendations</li>
             </ul>
             <Link to="/user/explore" className="cta-button">
-              Explore Celebrities
+              Find Talent
             </Link>
           </div>
           <div className="section-image">
-            <img src="/images/explore-celebrities.jpg" alt="Celebrities" />
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Celebrities" />
           </div>
         </div>
       </section>
@@ -73,26 +53,25 @@ const Home = () => {
       <section className="chat-payments-section">
         <div className="section-content reverse">
           <div className="section-image">
-            <img src="/images/chat-payments.jpg" alt="Chat and Payments" />
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80" alt="Chat and Payments" />
           </div>
           <div className="section-text">
             <h2>
               <FaComments className="section-icon" />
-              Chat & Payments
+              Chat & Secure Payments
             </h2>
             <p>
-              Connect directly with celebrities through our secure messaging system. 
-              Book appearances, request personalized messages, and make secure payments 
-              for exclusive celebrity services.
+              Message celebrities or their managers directly to discuss your requirements. 
+              All payments are handled securely, with clear terms and support from our team.
             </p>
             <ul className="feature-list">
-              <li>Secure direct messaging</li>
-              <li>Celebrity booking services</li>
+              <li>Instant messaging with talent</li>
+              <li>Easy booking management</li>
               <li>Secure payment processing</li>
-              <li>Personalized video messages</li>
+              <li>Dedicated customer support</li>
             </ul>
             <Link to="/user/chat" className="cta-button">
-              Start Chatting
+              Start Conversation
             </Link>
           </div>
         </div>
@@ -104,24 +83,24 @@ const Home = () => {
           <div className="section-text">
             <h2>
               <FaCalendarAlt className="section-icon" />
-              Exclusive Events
+              Book for Any Occasion
             </h2>
             <p>
-              Attend exclusive events, concerts, meet-and-greets, and private parties 
-              with your favorite celebrities. Get early access to tickets and VIP experiences.
+              From product launches and brand activations to private parties and weddings, 
+              our platform makes it easy to book celebrities for any event, big or small.
             </p>
             <ul className="feature-list">
-              <li>Exclusive event access</li>
-              <li>VIP meet-and-greet packages</li>
-              <li>Early ticket notifications</li>
-              <li>Private celebrity parties</li>
+              <li>Corporate events & brand campaigns</li>
+              <li>Weddings & private celebrations</li>
+              <li>Concerts, meet-and-greets, and more</li>
+              <li>Flexible packages for every budget</li>
             </ul>
             <Link to="/user/events" className="cta-button">
               Browse Events
             </Link>
           </div>
           <div className="section-image">
-            <img src="/images/events.jpg" alt="Events" />
+            <img src="https://images.unsplash.com/photo-1508672019048-805c876b67e2?auto=format&fit=crop&w=600&q=80" alt="Events" />
           </div>
         </div>
       </section>
@@ -129,16 +108,16 @@ const Home = () => {
       {/* Call to Action Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2>Ready to Connect with Stars?</h2>
-          <p>Join thousands of fans already connecting with their favorite celebrities</p>
+          <h2>Ready to Book Your Star?</h2>
+          <p>Join thousands of users who have made their events unforgettable with StarConnect.</p>
           <div className="cta-buttons">
             <Link to="/user/explore" className="cta-button primary">
               <FaUsers className="button-icon" />
-              Explore Celebrities
+              Find Talent
             </Link>
             <Link to="/user/chat" className="cta-button secondary">
               <FaComments className="button-icon" />
-              Start Chatting
+              Get Started
             </Link>
           </div>
         </div>
@@ -147,4 +126,4 @@ const Home = () => {
   );
 };
 
-export default Home; 
+export default Home;
