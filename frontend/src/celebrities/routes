@@ -1,0 +1,16 @@
+// filepath: frontend/src/celebrities/routes/index.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CelebrityDashboard from '../pages/CelebrityDashboard';
+
+const CelebrityRoutes = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/celebrities/dashboard" element={<CelebrityDashboard />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default CelebrityRoutes;
