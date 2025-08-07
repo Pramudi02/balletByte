@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './CelebrityNavbar.css';
 
 const CelebrityNavbar: React.FC = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  const handleSearchClick = () => {
+    setIsSearchOpen(!isSearchOpen);
+    if (isSearchOpen) {
+      setSearchQuery('');
+    }
+  };
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Searching for:', searchQuery);
+    // Handle search functionality here
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+  };
+
   return (
     <nav className="celebrity-navbar">
       <div className="navbar-container">
@@ -20,8 +40,21 @@ const CelebrityNavbar: React.FC = () => {
         </div>
         
         <div className="navbar-profile">
-          <div className="search-icon">
-            <i className="fas fa-search"></i>
+          <div className="search-container">
+            <div className={`search-bar ${isSearchOpen ? 'search-open' : ''}`}>
+              <form onSubmit={handleSearchSubmit}>
+                <input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="search-input"
+                />
+              </form>
+            </div>
+            <div className="search-icon" onClick={handleSearchClick}>
+              <i className={`fas ${isSearchOpen ? 'fa-times' : 'fa-search'}`}></i>
+            </div>
           </div>
           <div className="profile-icon">
             <i className="fas fa-user"></i>
