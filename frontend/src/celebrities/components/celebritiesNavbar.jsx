@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import './CelebrityNavbar.css';
+import { Link, useLocation } from 'react-router-dom';
+import './celebritiesNavbar.css';
 
-const CelebrityNavbar: React.FC = () => {
-  const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [searchQuery, setSearchQuery] = useState<string>('');
+const CelebrityNavbar = () => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const location = useLocation();
 
   const handleSearchClick = () => {
     setIsSearchOpen(!isSearchOpen);
@@ -12,51 +14,56 @@ const CelebrityNavbar: React.FC = () => {
     }
   };
 
-  const handleSearchSubmit = (e: React.FormEvent) => {
+  const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log('Searching for:', searchQuery);
-    // Handle search functionality here
   };
 
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
 
+  const isActive = (subPath) => {
+    const target = `/celebrities/${subPath}`.replace(/\/$/, '');
+    const current = location.pathname.replace(/\/$/, '');
+    return current === target;
+  };
+
   return (
-    <nav className="celebrity-navbar">
-      <div className="navbar-container">
-        <div className="navbar-brand">
-          <h1 className="brand-logo">CeyElite</h1>
+    <nav className="cey-navbar">
+      <div className="cey-navbar-container">
+        <div className="cey-navbar-brand">
+          <h1 className="cey-brand-logo">CeyElite</h1>
         </div>
         
-        <div className="navbar-menu">
-          <ul className="nav-links">
-            <li><a href="#home" className="nav-link">Home</a></li>
-            <li><a href="#gallery" className="nav-link">Gallery</a></li>
-            <li><a href="#events" className="nav-link">Events</a></li>
-            <li><a href="#post" className="nav-link">Chat</a></li>
-            <li><a href="#chat" className="nav-link">My Profile</a></li>
+        <div className="cey-navbar-menu">
+          <ul className="cey-nav-links">
+            <li><Link to="/celebrities/home" className={`cey-nav-link ${isActive('home') ? 'active' : ''}`}>Home</Link></li>
+            <li><Link to="/celebrities/gallery" className={`cey-nav-link ${isActive('gallery') ? 'active' : ''}`}>Gallery</Link></li>
+            <li><Link to="/celebrities/events" className={`cey-nav-link ${isActive('events') ? 'active' : ''}`}>Events</Link></li>
+            <li><Link to="/celebrities/chat" className={`cey-nav-link ${isActive('chat') ? 'active' : ''}`}>Chat</Link></li>
+            <li><Link to="/celebrities/profile" className={`cey-nav-link ${isActive('profile') ? 'active' : ''}`}>My Profile</Link></li>
           </ul>
         </div>
         
-        <div className="navbar-profile">
-          <div className="search-container">
-            <div className={`search-bar ${isSearchOpen ? 'search-open' : ''}`}>
+        <div className="cey-navbar-profile">
+          <div className="cey-search-container">
+            <div className={`cey-search-bar ${isSearchOpen ? 'cey-search-open' : ''}`}>
               <form onSubmit={handleSearchSubmit}>
                 <input
                   type="text"
                   placeholder="Search..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="search-input"
+                  className="cey-search-input"
                 />
               </form>
             </div>
-            <div className="search-icon" onClick={handleSearchClick}>
+            <div className="cey-search-icon" onClick={handleSearchClick}>
               <i className={`fas ${isSearchOpen ? 'fa-times' : 'fa-search'}`}></i>
             </div>
           </div>
-          <div className="profile-icon">
+          <div className="cey-profile-icon">
             <i className="fas fa-user"></i>
           </div>
         </div>

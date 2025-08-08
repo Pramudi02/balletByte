@@ -1,4 +1,4 @@
-.celebrity-navbar {
+.cey-navbar {
     background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
     border-bottom: 2px solid #d4af37;
     border-top: 1px solid #333333;
@@ -11,7 +11,7 @@
     box-shadow: 0 2px 20px rgba(212, 175, 55, 0.1);
   }
   
-  .navbar-container {
+  .cey-navbar-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -21,7 +21,7 @@
     height: 100%;
   }
   
-  .navbar-brand .brand-logo {
+  .cey-navbar-brand .cey-brand-logo {
     color: #d4af37;
     font-size: 28px;
     font-weight: bold;
@@ -36,13 +36,13 @@
     background-clip: text;
   }
   
-  .navbar-menu {
+  .cey-navbar-menu {
     flex: 1;
     display: flex;
     justify-content: center;
   }
   
-  .nav-links {
+  .cey-nav-links {
     display: flex;
     list-style: none;
     margin: 0;
@@ -50,7 +50,7 @@
     gap: 60px;
   }
   
-  .nav-link {
+  .cey-nav-link {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
@@ -62,25 +62,25 @@
     padding: 12px 0;
   }
   
-  .nav-link:hover {
+  .cey-nav-link:hover {
     color: #d4af37;
     text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
     transform: translateY(-1px);
   }
   
-  .navbar-profile {
+  .cey-navbar-profile {
     display: flex;
     align-items: center;
     gap: 15px;
   }
   
-  .search-container {
+  .cey-search-container {
     position: relative;
     display: flex;
     align-items: center;
   }
   
-  .search-bar {
+  .cey-search-bar {
     position: absolute;
     right: 45px;
     top: 50%;
@@ -91,17 +91,17 @@
     opacity: 0;
   }
   
-  .search-bar.search-open {
+  .cey-search-bar.cey-search-open {
     width: 170px;
     opacity: 1;
   }
   
-  .search-bar form {
+  .cey-search-bar form {
     display: flex;
     align-items: center;
   }
   
-  .search-bar .search-input {
+  .cey-search-bar .cey-search-input {
     width: 100%;
     padding: 8px 15px;
     border: 2px solid #d4af37;
@@ -114,16 +114,16 @@
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
   }
   
-  .search-bar .search-input::placeholder {
+  .cey-search-bar .cey-search-input::placeholder {
     color: rgba(255, 255, 255, 0.6);
   }
   
-  .search-bar .search-input:focus {
+  .cey-search-bar .cey-search-input:focus {
     border-color: #ffd700;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
   }
   
-  .search-icon {
+  .cey-search-icon {
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -137,18 +137,18 @@
     z-index: 10;
   }
   
-  .search-icon:hover {
+  .cey-search-icon:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   }
   
-  .search-icon i {
+  .cey-search-icon i {
     color: #000000;
     font-size: 16px;
     transition: all 0.3s ease;
   }
   
-  .profile-icon {
+  .cey-profile-icon {
     width: 38px;
     height: 38px;
     border-radius: 50%;
@@ -161,41 +161,41 @@
     box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
   }
   
-  .profile-icon:hover {
+  .cey-profile-icon:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   }
   
-  .profile-icon i {
+  .cey-profile-icon i {
     color: #000000;
     font-size: 16px;
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    .navbar-container {
+    .cey-navbar-container {
       padding: 0 15px;
     }
     
-    .brand-logo {
+    .cey-brand-logo {
       font-size: 22px;
     }
     
-    .nav-links {
+    .cey-nav-links {
       gap: 30px;
     }
     
-    .nav-link {
+    .cey-nav-link {
       font-size: 12px;
     }
   }
   
   @media (max-width: 480px) {
-    .navbar-menu {
+    .cey-navbar-menu {
       display: none;
     }
     
-    .navbar-container {
+    .cey-navbar-container {
       justify-content: space-between;
     }
   }
