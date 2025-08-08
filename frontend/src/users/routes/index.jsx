@@ -8,6 +8,8 @@ import Chat from '../pages/Chat';
 import Explore from '../pages/Explore';
 import Notifications from '../pages/Notifications';
 import Profile from '../pages/Profile';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 const UserRoutes = () => {
   return (
@@ -16,13 +18,15 @@ const UserRoutes = () => {
         <UserNavbar />
         <main className="main-content">
           <Routes>
+            <Route path="/user/login" element={<Login />} />
+            <Route path="/user/signup" element={<Signup />} />
             <Route path="/user/home" element={<Home />} />
             <Route path="/user/favorites" element={<Favorites />} />
             <Route path="/user/events" element={<Events />} />
-                               <Route path="/user/chat" element={<Chat />} />
-                   <Route path="/user/explore" element={<Explore />} />
-                   <Route path="/user/notifications" element={<Notifications />} />
-                   <Route path="/user/profile" element={<Profile />} />
+            <Route path="/user/chat" element={<Chat />} />
+            <Route path="/user/explore" element={<Explore />} />
+            <Route path="/user/notifications" element={<Notifications />} />
+            <Route path="/user/profile" element={<Profile />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </main>
