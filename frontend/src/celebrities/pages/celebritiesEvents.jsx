@@ -199,9 +199,9 @@ const CelebritiesEvents = () => {
             onClick={() => setShowForm(!showForm)}
           >
             <i className="fa-solid fa-plus" />
-            {showForm ? 'Cancel' : 'Add New Event'}
-          </button>
-        </div>
+          {showForm ? 'Cancel' : 'Add New Event'}
+        </button>
+      </div>
       </header>
 
       {/* Enhanced Form */}
@@ -216,15 +216,15 @@ const CelebritiesEvents = () => {
                       <i className="fa-solid fa-heading" />
                       Event Title
                     </span>
-                    <input
+          <input
                       className="cey-input cey-input--enhanced"
-                      type="text"
-                      name="title"
-                      value={form.title}
-                      onChange={handleInputChange}
+            type="text"
+            name="title"
+            value={form.title}
+            onChange={handleInputChange}
                       placeholder="Enter event title"
-                      required
-                    />
+            required
+          />
                   </label>
 
                   <label className="cey-field">
@@ -250,14 +250,14 @@ const CelebritiesEvents = () => {
                         <i className="fa-solid fa-calendar" />
                         Date
                       </span>
-                      <input
+          <input
                         className="cey-input cey-input--enhanced"
-                        type="date"
-                        name="date"
-                        value={form.date}
-                        onChange={handleInputChange}
-                        required
-                      />
+            type="date"
+            name="date"
+            value={form.date}
+            onChange={handleInputChange}
+            required
+          />
                     </label>
 
                     <label className="cey-field">
@@ -265,14 +265,14 @@ const CelebritiesEvents = () => {
                         <i className="fa-solid fa-clock" />
                         Time
                       </span>
-                      <input
+          <input
                         className="cey-input cey-input--enhanced"
                         type="time"
                         name="time"
                         value={form.time}
-                        onChange={handleInputChange}
-                        required
-                      />
+            onChange={handleInputChange}
+            required
+          />
                     </label>
                   </div>
 
@@ -383,7 +383,7 @@ const CelebritiesEvents = () => {
                             <select
                               name="ticketing.currency"
                               value={form.ticketing.currency}
-                              onChange={handleInputChange}
+            onChange={handleInputChange}
                             >
                               <option value="USD">USD</option>
                               <option value="EUR">EUR</option>
@@ -453,7 +453,7 @@ const CelebritiesEvents = () => {
                 Create Event
               </button>
             </div>
-          </form>
+        </form>
         </div>
       )}
 
@@ -594,7 +594,7 @@ const CelebritiesEvents = () => {
                     Delete
                   </button>
                 </div>
-              </div>
+                </div>
             </article>
           ))
         )}
