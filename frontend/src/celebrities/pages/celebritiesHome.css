@@ -8,7 +8,7 @@
   width: 100%;
   min-height: calc(100vh - 70px);
   padding-top: 70px;
-  background: url('/celebrityhome.jpg') center right/cover no-repeat #0b0b0b;
+  background: url('/celebrityhome.jpg') center right/cover no-repeat #071a3d;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -17,7 +17,7 @@
 .cey-home-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 35%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%);
+  background: linear-gradient(90deg, rgba(4,14,34,0.9) 0%, rgba(4,14,34,0.7) 35%, rgba(4,14,34,0.35) 60%, rgba(4,14,34,0.1) 100%);
   pointer-events: none;
 }
 
@@ -50,7 +50,7 @@
    ENHANCED SECTIONS
    ====================== */
 .cey-home-sections { 
-  background: #0a0a0a; 
+  background: #061a33; 
   position: relative;
   overflow: hidden;
 }
@@ -69,7 +69,7 @@
   position: relative;
 }
 
-.cey-title {
+.cey-titles {
   margin: 0 0 16px 0;
   font-size: clamp(28px, 3.5vw, 42px);
   font-weight: 800;
@@ -102,7 +102,7 @@
 .cey-card {
   display: block;
   padding: 32px 24px;
-  background: linear-gradient(145deg, #111 0%, #0d0d0d 50%, #0a0a0a 100%);
+  background: linear-gradient(145deg, #0e2447 0%, #0a1c38 50%, #071a33 100%);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 20px;
   color: #fff;
@@ -214,7 +214,8 @@
 .cey-spotlight {
   background: 
     radial-gradient(1400px 600px at 20% 50%, rgba(212, 175, 55, 0.08), transparent 60%),
-    radial-gradient(800px 400px at 80% 20%, rgba(212, 175, 55, 0.06), transparent 50%);
+    radial-gradient(800px 400px at 80% 20%, rgba(212, 175, 55, 0.06), transparent 50%),
+    linear-gradient(180deg, #071a33 0%, #0b2347 100%);
   position: relative;
   text-align: center;
   overflow: hidden;
@@ -399,7 +400,7 @@
   margin-bottom: 32px;
   position: relative;
   padding: 24px 32px;
-  background: linear-gradient(135deg, rgba(17, 17, 17, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+  background: linear-gradient(135deg, rgba(14, 36, 71, 0.8) 0%, rgba(7, 26, 51, 0.9) 100%);
   border: 1px solid rgba(212, 175, 55, 0.15);
   border-radius: 16px;
   backdrop-filter: blur(10px);
@@ -422,7 +423,7 @@
   height: 60px;
   background: linear-gradient(135deg, #d4af37 0%, #ffd36b 100%);
   border-radius: 50%;
-  border: 4px solid #0a0a0a;
+  border: 4px solid #061a33;
   color: #000;
   font-size: 18px;
   flex-shrink: 0;
@@ -475,7 +476,7 @@
 .cey-stat-card {
   padding: 40px 32px;
   background: 
-    linear-gradient(135deg, rgba(17, 17, 17, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%),
+    linear-gradient(135deg, rgba(14, 36, 71, 0.9) 0%, rgba(7, 26, 51, 0.95) 100%),
     radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 24px;
@@ -507,17 +508,27 @@
   box-shadow: 0 15px 40px rgba(212, 175, 55, 0.1);
 }
 
+.cey-stat-card::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: radial-gradient(600px 240px at 20% 20%, rgba(13,63,148,0.25), transparent 60%);
+  pointer-events: none;
+}
+
 .cey-stat-card__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2) 0%, rgba(212, 175, 55, 0.1) 100%);
+  background: linear-gradient(135deg, rgba(18, 58, 125, 0.35) 0%, rgba(8, 35, 74, 0.25) 100%);
   border-radius: 50%;
   margin-bottom: 24px;
   color: #f5d26a;
   font-size: 32px;
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 8px 28px rgba(13,63,148,0.25) inset, 0 8px 28px rgba(13,63,148,0.2);
 }
 
 .cey-stat-card__number {
@@ -529,6 +540,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  text-shadow: 0 10px 30px rgba(13,63,148,0.25);
 }
 
 .cey-stat-card__label {
@@ -544,13 +556,71 @@
   font-weight: 500;
 }
 
+/* Unique stat variants with blue + gold accents */
+.cey-stat-card--followers {
+  border-color: rgba(47, 128, 237, 0.35);
+  background-image:
+    linear-gradient(135deg, rgba(12, 35, 74, 0.95) 0%, rgba(6, 26, 51, 0.98) 100%),
+    radial-gradient(circle at 15% 20%, rgba(47,128,237,0.15), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(212,175,55,0.15), transparent 55%);
+}
+
+.cey-stat-card--engagement {
+  border-color: rgba(0, 168, 255, 0.35);
+  background-image:
+    linear-gradient(135deg, rgba(11, 40, 92, 0.95) 0%, rgba(7, 28, 60, 0.98) 100%),
+    radial-gradient(circle at 20% 80%, rgba(0,168,255,0.14), transparent 55%),
+    radial-gradient(circle at 85% 15%, rgba(212,175,55,0.12), transparent 55%);
+}
+
+.cey-stat-card--events {
+  border-color: rgba(21, 101, 192, 0.35);
+  background-image:
+    linear-gradient(135deg, rgba(9, 33, 74, 0.95) 0%, rgba(6, 26, 51, 0.98) 100%),
+    radial-gradient(circle at 80% 30%, rgba(21,101,192,0.16), transparent 55%),
+    radial-gradient(circle at 15% 90%, rgba(212,175,55,0.12), transparent 55%);
+}
+
+.cey-stat-card--followers .cey-stat-card__icon,
+.cey-stat-card--engagement .cey-stat-card__icon,
+.cey-stat-card--events .cey-stat-card__icon {
+  background: linear-gradient(135deg, rgba(212,175,55,0.18) 0%, rgba(18,58,125,0.25) 100%);
+}
+
+.cey-stat-card:hover .cey-stat-card__icon {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.cey-stat-card__label {
+  letter-spacing: 0.3px;
+}
+
+/* Subtle animated shine over cards */
+.cey-stat-card .shine {
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 40%);
+  transform: rotate(15deg);
+  animation: cardShine 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes cardShine {
+  0% { transform: translateX(-10%) rotate(15deg); opacity: 0.5; }
+  50% { transform: translateX(10%) rotate(15deg); opacity: 0.8; }
+  100% { transform: translateX(-10%) rotate(15deg); opacity: 0.5; }
+}
+
 /* ======================
    ENHANCED FINAL CTA
    ====================== */
 .cey-final-cta {
   background: 
     radial-gradient(ellipse 1200px 600px at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
-    linear-gradient(135deg, rgba(17, 17, 17, 0.8) 0%, rgba(10, 10, 10, 0.95) 100%);
+    linear-gradient(135deg, rgba(14, 36, 71, 0.85) 0%, rgba(7, 26, 51, 0.96) 100%);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 32px;
   overflow: hidden;

@@ -150,7 +150,7 @@ const CelebritiesHome = () => {
         {/* Stats Section - New addition */}
         <section className="cey-section cey-stats">
           <div className="cey-section__head">
-            <h3 className="cey-title">Your Impact</h3>
+            <h3 className="cey-titles">Your Impact</h3>
             <p className="cey-sub">See how your star power is growing</p>
           </div>
           <div className="cey-stats__grid">
