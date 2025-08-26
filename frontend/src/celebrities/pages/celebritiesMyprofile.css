@@ -1,0 +1,647 @@
+/* Blue and Gold themed styles for CelebritiesMyprofile page - unique class names */
+.cey-myprofile {
+  background: #061a33;
+  color: #fff;
+  min-height: 100vh;
+  padding: 90px 5vw 56px;
+}
+
+.cey-myprofile__header {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto 32px;
+}
+
+.cey-myprofile__titles {
+  display: grid;
+  gap: 6px;
+}
+
+.cey-myprofile__title {
+  margin: 0;
+  font-size: clamp(22px, 3.2vw, 36px);
+  font-weight: 800;
+  letter-spacing: .5px;
+  color: #f5d26a;
+  text-shadow: 0 2px 14px rgba(212,175,55,.25);
+}
+
+.cey-myprofile__subtitle {
+  margin: 0;
+  opacity: .9;
+  font-size: 16px;
+}
+
+.cey-myprofile__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cey-myprofile__edit-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Container */
+.cey-myprofile__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(14,36,71,0.9), rgba(7,26,51,0.95));
+  border: 1px solid rgba(212,175,55,.2);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Tabs */
+.cey-myprofile__tabs {
+  display: flex;
+  background: linear-gradient(180deg, #0e2447, #071a33);
+  border-bottom: 1px solid rgba(212,175,55,.2);
+}
+
+.cey-myprofile__tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 3px solid transparent;
+}
+
+.cey-myprofile__tab:hover {
+  color: #ffd36b;
+  background: rgba(212,175,55,0.1);
+}
+
+.cey-myprofile__tab.active {
+  color: #ffd36b;
+  border-bottom-color: #ffd36b;
+  background: rgba(212,175,55,0.15);
+}
+
+.cey-myprofile__tab i {
+  font-size: 16px;
+}
+
+/* Content */
+.cey-myprofile__content {
+  padding: 40px;
+  min-height: 600px;
+}
+
+.cey-myprofile__section {
+  max-width: 800px;
+}
+
+.cey-myprofile__section-title {
+  margin: 0 0 24px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cey-myprofile__section-title::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(180deg, #d4af37, #ffd36b);
+  border-radius: 2px;
+}
+
+/* Avatar Section */
+.cey-myprofile__avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(212,175,55,0.2);
+}
+
+.cey-myprofile__avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 4px solid rgba(212,175,55,0.3);
+}
+
+.cey-myprofile__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cey-myprofile__avatar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all .3s ease;
+}
+
+.cey-myprofile__avatar:hover .cey-myprofile__avatar-overlay {
+  opacity: 1;
+}
+
+.cey-myprofile__avatar-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cey-myprofile__avatar-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cey-myprofile__avatar-info p {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+}
+
+.cey-myprofile__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #d4af37, #ffd36b);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cey-myprofile__status i {
+  font-size: 8px;
+  color: #22c55e;
+}
+
+/* Form */
+.cey-myprofile__form {
+  display: grid;
+  gap: 24px;
+}
+
+.cey-myprofile__field-group {
+  display: grid;
+  gap: 8px;
+}
+
+.cey-myprofile__field-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffd36b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cey-myprofile__input,
+.cey-myprofile__textarea {
+  background: linear-gradient(145deg, #0e2447, #071a33);
+  border: 1px solid rgba(212,175,55,0.3);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all .3s ease;
+}
+
+.cey-myprofile__input:focus,
+.cey-myprofile__textarea:focus {
+  outline: none;
+  border-color: #ffd36b;
+  box-shadow: 0 0 0 3px rgba(255,211,107,0.2);
+}
+
+.cey-myprofile__input:disabled,
+.cey-myprofile__textarea:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cey-myprofile__textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Categories */
+.cey-myprofile__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.cey-myprofile__category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #d4af37, #ffd36b);
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cey-myprofile__category-remove {
+  background: none;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  padding: 2px;
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+
+.cey-myprofile__category-remove:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.cey-myprofile__category-input {
+  background: transparent;
+  border: 1px dashed rgba(212,175,55,0.5);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  min-width: 120px;
+}
+
+.cey-myprofile__category-input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+
+/* Social Media */
+.cey-myprofile__social-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.cey-myprofile__social-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 16px;
+  transition: all .3s ease;
+}
+
+.cey-myprofile__social-item:hover {
+  background: rgba(212,175,55,0.1);
+  border-color: rgba(212,175,55,0.3);
+}
+
+.cey-myprofile__social-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.cey-myprofile__social-item:nth-child(1) .cey-myprofile__social-icon {
+  background: linear-gradient(135deg, #e4405f, #c13584);
+  color: #fff;
+}
+
+.cey-myprofile__social-item:nth-child(2) .cey-myprofile__social-icon {
+  background: linear-gradient(135deg, #1da1f2, #0d8bd9);
+  color: #fff;
+}
+
+.cey-myprofile__social-item:nth-child(3) .cey-myprofile__social-icon {
+  background: linear-gradient(135deg, #1877f2, #0d6efd);
+  color: #fff;
+}
+
+.cey-myprofile__social-item:nth-child(4) .cey-myprofile__social-icon {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+  color: #fff;
+}
+
+.cey-myprofile__social-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.cey-myprofile__social-content label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffd36b;
+}
+
+/* Achievements */
+.cey-myprofile__achievements {
+  display: grid;
+  gap: 12px;
+}
+
+.cey-myprofile__achievement {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(212,175,55,0.1);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 12px;
+  transition: all .3s ease;
+}
+
+.cey-myprofile__achievement:hover {
+  background: rgba(212,175,55,0.15);
+  border-color: rgba(212,175,55,0.3);
+}
+
+.cey-myprofile__achievement i {
+  color: #ffd36b;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.cey-myprofile__achievement span {
+  flex: 1;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.cey-myprofile__achievement-remove {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all .2s ease;
+}
+
+.cey-myprofile__achievement-remove:hover {
+  color: #ef4444;
+  background: rgba(239,68,68,0.1);
+}
+
+.cey-myprofile__add-achievement {
+  margin-top: 16px;
+}
+
+/* Settings */
+.cey-myprofile__settings {
+  display: grid;
+  gap: 16px;
+}
+
+.cey-myprofile__setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(212,175,55,0.05);
+  border: 1px solid rgba(212,175,55,0.2);
+  border-radius: 16px;
+  transition: all .3s ease;
+}
+
+.cey-myprofile__setting-item:hover {
+  background: rgba(212,175,55,0.1);
+  border-color: rgba(212,175,55,0.3);
+}
+
+.cey-myprofile__setting-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cey-myprofile__setting-info h4 {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.cey-myprofile__setting-info p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Toggle Switch */
+.cey-myprofile__toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.cey-myprofile__toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.cey-myprofile__toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.2);
+  transition: .3s;
+  border-radius: 24px;
+}
+
+.cey-myprofile__toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: #fff;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.cey-myprofile__toggle input:checked + .cey-myprofile__toggle-slider {
+  background: linear-gradient(135deg, #d4af37, #ffd36b);
+}
+
+.cey-myprofile__toggle input:checked + .cey-myprofile__toggle-slider:before {
+  transform: translateX(26px);
+}
+
+/* Button Styles */
+.cey-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .3s ease;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+}
+
+.cey-btn--primary {
+  background: linear-gradient(135deg, #d4af37, #ffd36b);
+  color: #000;
+  border-color: #ffd36b;
+}
+
+.cey-btn--primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+}
+
+.cey-btn--secondary {
+  background: rgba(212,175,55,0.1);
+  border-color: rgba(212,175,55,0.3);
+  color: #ffd36b;
+}
+
+.cey-btn--secondary:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: #ffd36b;
+}
+
+.cey-btn--danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #fff;
+  border-color: #ef4444;
+}
+
+.cey-btn--danger:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(239,68,68,0.4);
+}
+
+.cey-btn--icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(212,175,55,0.1);
+  border-color: rgba(212,175,55,0.3);
+  color: #ffd36b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cey-btn--icon:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: #ffd36b;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cey-myprofile__content {
+    padding: 32px 24px;
+  }
+  
+  .cey-myprofile__tabs {
+    flex-wrap: wrap;
+  }
+  
+  .cey-myprofile__tab {
+    flex: 1 1 calc(50% - 1px);
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cey-myprofile { 
+    padding: 90px 3vw 40px; 
+  }
+  
+  .cey-myprofile__header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  
+  .cey-myprofile__avatar-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .cey-myprofile__social-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .cey-myprofile__social-content {
+    width: 100%;
+  }
+  
+  .cey-myprofile__tabs {
+    flex-direction: column;
+  }
+  
+  .cey-myprofile__tab {
+    flex: none;
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .cey-myprofile__content {
+    padding: 24px 16px;
+  }
+  
+  .cey-myprofile__edit-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .cey-myprofile__setting-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    text-align: center;
+  }
+}
