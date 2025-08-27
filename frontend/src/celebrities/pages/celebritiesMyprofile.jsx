@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import './celebritiesMyprofile.css';
 
 const CelebritiesMyprofile = () => {
+
   const [activeTab, setActiveTab] = useState('profile');
   const [profileData, setProfileData] = useState({
     name: 'Sarah Johnson',
@@ -94,6 +95,7 @@ const CelebritiesMyprofile = () => {
   };
 
   return (
+
     <section className="cey-myprofile">
       <header className="cey-myprofile__header">
         <div className="cey-myprofile__titles">
@@ -494,3 +496,4 @@ const CelebritiesMyprofile = () => {
 };
 
 export default CelebritiesMyprofile;
+
