@@ -4,13 +4,22 @@ import './celebritiesHomeUnique.css';
 const CelebritiesHome = () => {
   const heroImages = ['/celebrityhome.jpg', '/celebrityhome_1.jpg'];
   const [heroIndex, setHeroIndex] = useState(0);
+  const [nextIndex, setNextIndex] = useState(1);
+  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % heroImages.length);
+      const upcoming = (heroIndex + 1) % heroImages.length;
+      setNextIndex(upcoming);
+      setIsFading(true);
+      const timeout = setTimeout(() => {
+        setHeroIndex(upcoming);
+        setIsFading(false);
+      }, 900);
+      return () => clearTimeout(timeout);
     }, 7000);
     return () => clearInterval(interval);
-  }, []);
+  }, [heroIndex]);
 
   return (
     <section className="ceyhome">
@@ -18,10 +27,17 @@ const CelebritiesHome = () => {
         className="ceyhome-hero"
         role="img"
         aria-label="Celebrities hero"
-        style={{
-          background: `url('${heroImages[heroIndex]}') center right/cover no-repeat #071a3d`
-        }}
       >
+        {/* Background layers for smooth crossfade */}
+        <div
+          className="ceyhome-hero__bg ceyhome-hero__bg--current"
+          style={{ backgroundImage: `url('${heroImages[heroIndex]}')` }}
+        />
+        <div
+          className={`ceyhome-hero__bg ceyhome-hero__bg--next ${isFading ? 'active' : ''}`}
+          style={{ backgroundImage: `url('${heroImages[nextIndex]}')` }}
+        />
+        <div className={`ceyhome-hero__fade ${isFading ? 'active' : ''}`} />
         <div className="ceyhome-hero__overlay" />
         <div className="ceyhome-hero__content">
           <h1 className="ceyhome-hero__title">Welcome to your Star Space!</h1>
