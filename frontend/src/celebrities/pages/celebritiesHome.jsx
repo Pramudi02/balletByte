@@ -1,10 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './celebritiesHomeUnique.css';
 
 const CelebritiesHome = () => {
+  const heroImages = ['/celebrityhome.jpg', '/celebrityhome_1.jpg'];
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 7000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="ceyhome">
-      <div className="ceyhome-hero" role="img" aria-label="Celebrities hero">
+      <div
+        className="ceyhome-hero"
+        role="img"
+        aria-label="Celebrities hero"
+        style={{
+          background: `url('${heroImages[heroIndex]}') center right/cover no-repeat #071a3d`
+        }}
+      >
         <div className="ceyhome-hero__overlay" />
         <div className="ceyhome-hero__content">
           <h1 className="ceyhome-hero__title">Welcome to your Star Space!</h1>
