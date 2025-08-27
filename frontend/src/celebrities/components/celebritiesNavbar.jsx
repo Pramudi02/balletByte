@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import CelebritiesProfile from '../pages/celebritiesProfile';
 import './celebritiesNavbar.css';
 
 const CelebrityNavbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const location = useLocation();
 
   const handleSearchClick = () => {
@@ -21,6 +23,10 @@ const CelebrityNavbar = () => {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  const handleProfileClick = () => {
+    setIsProfileOpen(true);
   };
 
   const isActive = (subPath) => {
@@ -63,11 +69,17 @@ const CelebrityNavbar = () => {
               <i className={`fas ${isSearchOpen ? 'fa-times' : 'fa-search'}`}></i>
             </div>
           </div>
-          <div className="cey-profile-icon">
+          <div className="cey-profile-icon" onClick={handleProfileClick}>
             <i className="fas fa-user"></i>
           </div>
         </div>
       </div>
+      
+      {/* Profile Sidebar */}
+      <CelebritiesProfile 
+        isOpen={isProfileOpen} 
+        onClose={() => setIsProfileOpen(false)} 
+      />
     </nav>
   );
 };

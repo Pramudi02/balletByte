@@ -165,6 +165,10 @@
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   }
+
+  .cey-profile-icon:active {
+    transform: scale(0.95);
+  }
   
   .cey-profile-icon i {
     color: #000000;
