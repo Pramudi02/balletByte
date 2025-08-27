@@ -1,7 +1,12 @@
 .ceyhome { margin: 0; }
 
 /* Hero */
-.ceyhome-hero { position: relative; width: 100%; min-height: calc(100vh - 70px); padding-top: 70px; background: url('/celebrityhome.jpg') center right/cover no-repeat #071a3d; display: flex; align-items: center; justify-content: flex-start; }
+.ceyhome-hero { position: relative; width: 100%; min-height: calc(100vh - 70px); padding-top: 70px; background: #071a3d; display: flex; align-items: center; justify-content: flex-start; overflow: hidden; }
+.ceyhome-hero__bg { position: absolute; inset: 0; background-position: center right; background-repeat: no-repeat; background-size: cover; opacity: 1; transition: opacity .9s ease-in-out; }
+.ceyhome-hero__bg--next { opacity: 0; }
+.ceyhome-hero__bg--next.active { opacity: 1; }
+.ceyhome-hero__fade { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background .9s ease-in-out; pointer-events: none; }
+.ceyhome-hero__fade.active { background: rgba(0,0,0,0.25); }
 .ceyhome-hero__overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(4,14,34,0.9) 0%, rgba(4,14,34,0.7) 35%, rgba(4,14,34,0.35) 60%, rgba(4,14,34,0.1) 100%); pointer-events: none; }
 .ceyhome-hero__content { position: relative; z-index: 1; max-width: 740px; padding: 40px 24px 40px 5vw; color: #ffffff; text-align: left; }
 .ceyhome-hero__title { margin: 0 0 12px 0; font-size: clamp(32px, 5vw, 56px); font-weight: 900; letter-spacing: 1px; color: #f5d26a; text-shadow: 0 2px 16px rgba(212,175,55,.45); }
