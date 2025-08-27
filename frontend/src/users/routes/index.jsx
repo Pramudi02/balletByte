@@ -8,6 +8,8 @@ import Chat from '../pages/Chat';
 import Explore from '../pages/Explore';
 import Notifications from '../pages/Notifications';
 import Profile from '../pages/Profile';
+import Login from '../pages/Login';
+import Signup from '../pages/Signup';
 
 const UserRoutes = () => {
   return (
@@ -15,10 +17,12 @@ const UserRoutes = () => {
       <UserNavbar />
       <main className="main-content">
         <Routes>
-          {/* Root paths */}
-          <Route path="/" element={<Home />} />
+          {/* Auth routes */}
+          <Route path="/user/login" element={<Login />} />
+          <Route path="/user/signup" element={<Signup />} />
 
-          {/* Optional namespaced user paths */}
+          {/* Main app routes */}
+          <Route path="/" element={<Home />} />
           <Route path="/user/home" element={<Home />} />
           <Route path="/user/favorites" element={<Favorites />} />
           <Route path="/user/events" element={<Events />} />
@@ -32,4 +36,4 @@ const UserRoutes = () => {
   );
 };
 
-export default UserRoutes; 
+export default UserRoutes;
