@@ -639,8 +639,7 @@ const CelebritiesChat = () => {
                   </div>
                   <div className="cey-chat__profile-section">
                     <div className="cey-chat__profile-section-header">
-                      <i className="fa-solid fa-bell" />
-                      <span>Notifications</span>
+                     
                     </div>
                   </div>
                   <div className="cey-chat__profile-section">
