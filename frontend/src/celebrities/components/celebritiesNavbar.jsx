@@ -44,7 +44,7 @@ const CelebrityNavbar = () => {
         
         <div className="cey-navbar-menu">
           <ul className="cey-nav-links">
-            <li><Link to="/celebrities/home" className={`cey-nav-link ${isActive('home') ? 'active' : ''}`}>Home</Link></li>
+            <li><Link to="/celebrities" className={`cey-nav-link ${isActive('') ? 'active' : ''}`}>Home</Link></li>
             <li><Link to="/celebrities/gallery" className={`cey-nav-link ${isActive('gallery') ? 'active' : ''}`}>Gallery</Link></li>
             <li><Link to="/celebrities/events" className={`cey-nav-link ${isActive('events') ? 'active' : ''}`}>Events</Link></li>
             <li><Link to="/celebrities/chat" className={`cey-nav-link ${isActive('chat') ? 'active' : ''}`}>Chat</Link></li>

@@ -245,6 +245,57 @@
   gap: 12px;
 }
 
+/* Filter Buttons */
+.cey-filter-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(180deg,#0e2447,#071a33);
+  border: 1px solid rgba(212,175,55,.35);
+  padding: 4px;
+  border-radius: 12px;
+  transition: all .3s ease;
+}
+
+.cey-filter-buttons:hover {
+  border-color: rgba(212,175,55,.6);
+  box-shadow: 0 4px 12px rgba(212,175,55,.15);
+}
+
+.cey-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(255,255,255,0.7);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all .3s ease;
+  white-space: nowrap;
+}
+
+.cey-filter-btn:hover {
+  color: #fff;
+  background: rgba(212,175,55,0.1);
+}
+
+.cey-filter-btn--active {
+  background: linear-gradient(135deg, #f5d26a, #d4af37);
+  color: #061a33;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(212,175,55,0.3);
+}
+
+.cey-filter-btn--active:hover {
+  background: linear-gradient(135deg, #f7d97a, #d4af37);
+  color: #061a33;
+}
+
 .cey-select-wrap {
   display: inline-flex;
   align-items: center;
@@ -472,6 +523,26 @@
   font-weight: 700;
   color: #fff;
   line-height: 1.3;
+}
+
+.cey-event-card__celebrity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0;
+  padding: 4px 8px;
+  background: rgba(212,175,55,0.15);
+  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 8px;
+  color: #ffd36b;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cey-event-card__celebrity i {
+  font-size: 10px;
 }
 
 .cey-event-card__description {
