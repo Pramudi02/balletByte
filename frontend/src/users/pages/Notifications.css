@@ -12,14 +12,14 @@
 }
 
 .notifications-header h1 {
-  color: #ffd700;
+  color: #f5d26a;
   font-size: 2.5rem;
   margin: 0;
 }
 
 .mark-all-read {
-  background: #ffd700;
-  color: #000;
+  background: #f5d26a;
+  color: #071a3d;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -29,7 +29,7 @@
 }
 
 .mark-all-read:hover {
-  background: #e6c200;
+  background: #d4af37;
 }
 
 .notifications-filters {
@@ -40,9 +40,9 @@
 }
 
 .filter-button {
-  background: #333;
-  border: 1px solid #555;
-  color: #ccc;
+  background: #1a3a5a;
+  border: 1px solid #1a3a5a;
+  color: #ffffff;
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
@@ -51,14 +51,14 @@
 }
 
 .filter-button.active {
-  background: #ffd700;
-  color: #000;
-  border-color: #ffd700;
+  background: #f5d26a;
+  color: #071a3d;
+  border-color: #f5d26a;
 }
 
 .filter-button:hover {
-  background: #ffd700;
-  color: #000;
+  background: #f5d26a;
+  color: #071a3d;
 }
 
 .notifications-list {
@@ -68,8 +68,8 @@
 }
 
 .notification-item {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #0e2447;
+  border: 1px solid #1a3a5a;
   border-radius: 10px;
   padding: 20px;
   transition: all 0.3s ease;
@@ -79,12 +79,12 @@
 }
 
 .notification-item:hover {
-  border-color: #ffd700;
+  border-color: #f5d26a;
 }
 
 .notification-item.unread {
-  border-left: 4px solid #ffd700;
-  background: #2a2a2a;
+  border-left: 4px solid #f5d26a;
+  background: #0a1c38;
 }
 
 .notification-avatar {
@@ -105,7 +105,7 @@
 }
 
 .notification-time {
-  color: #ccc;
+  color: #f5d26a;
   font-size: 0.9rem;
 }
 
@@ -116,9 +116,9 @@
 }
 
 .notification-button {
-  background: #333;
+  background: #1a3a5a;
   border: none;
-  color: #ccc;
+  color: #ffffff;
   padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
@@ -127,8 +127,8 @@
 }
 
 .notification-button:hover {
-  background: #ffd700;
-  color: #000;
+  background: #f5d26a;
+  color: #071a3d;
 }
 
 .notification-type {
@@ -163,11 +163,11 @@
 .empty-state {
   text-align: center;
   padding: 60px 20px;
-  color: #ccc;
+  color: #ffffff;
 }
 
 .empty-state h3 {
-  color: #ffd700;
+  color: #f5d26a;
   margin-bottom: 10px;
   font-size: 1.5rem;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaStar, FaHeart, FaSearch, FaFilter } from 'react-icons/fa';
+import { FaStar, FaHeart, FaSearch, FaFilter, FaMusic, FaFilm, FaTrophy, FaUserTie, FaInstagram } from 'react-icons/fa';
 import './Explore.css';
 
 const Explore = () => {
@@ -9,77 +9,109 @@ const Explore = () => {
   const celebrities = [
     {
       id: 1,
-      name: 'Taylor Swift',
-      image: '/images/celebrities/taylor-swift.jpg',
-      category: 'Music',
-      followers: '2.5M',
+      name: 'Dinakshi Prayasad',
+      image: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
+      category: 'Film & Television',
+      followers: '850K',
       isVerified: true,
-      isFavorite: false
+      isFavorite: false,
+      description: 'Award-winning Sri Lankan actress known for her versatile performances in cinema and television.',
+      rating: 4.8,
+      price: 'From $2,500',
+      availability: 'Available for events',
+      specialties: ['Film', 'Television', 'Brand Endorsements', 'Corporate Events']
     },
     {
       id: 2,
-      name: 'Beyoncé',
-      image: '/images/celebrities/beyonce.jpg',
-      category: 'Music',
-      followers: '3.1M',
+      name: 'Hemal Ranasinghe',
+      image: 'https://i.pinimg.com/736x/a0/0c/58/a00c5880737dcc85915e08fdddf86de2.jpg',
+      category: 'Film & Television',
+      followers: '1.2M',
       isVerified: true,
-      isFavorite: true
+      isFavorite: true,
+      description: 'Renowned Sri Lankan actor and director with extensive experience in the entertainment industry.',
+      rating: 4.9,
+      price: 'From $3,000',
+      availability: 'Available for events',
+      specialties: ['Acting', 'Directing', 'Film Production', 'Corporate Events']
     },
     {
       id: 3,
-      name: 'Justin Bieber',
-      image: '/images/celebrities/justin-bieber.jpg',
-      category: 'Music',
-      followers: '1.8M',
+      name: 'Kumar Sangakkara',
+      image: 'https://i.pinimg.com/1200x/9b/0d/77/9b0d7728bb62a423c155bf5bf060270f.jpg',
+      category: 'Sports',
+      followers: '5.2M',
       isVerified: true,
-      isFavorite: false
+      isFavorite: false,
+      description: 'Legendary Sri Lankan cricketer and former captain, ICC Hall of Famer and cricket commentator.',
+      rating: 5.0,
+      price: 'From $8,000',
+      availability: 'Limited availability',
+      specialties: ['Cricket', 'Sports Events', 'Corporate Speaking', 'Brand Endorsements']
     },
     {
       id: 4,
-      name: 'Ariana Grande',
-      image: '/images/celebrities/ariana-grande.jpg',
-      category: 'Music',
-      followers: '2.2M',
+      name: 'Saranga Disasekara',
+      image: 'https://lakwimana.com/images/Personalized-Video-Message-from-Saranga-Disasekara.jpg',
+      category: 'Film & Television',
+      followers: '680K',
       isVerified: true,
-      isFavorite: true
+      isFavorite: false,
+      description: 'Popular Sri Lankan actor and television personality known for his charismatic screen presence.',
+      rating: 4.7,
+      price: 'From $2,000',
+      availability: 'Available for events',
+      specialties: ['Acting', 'Television', 'Personal Appearances', 'Corporate Events']
     },
     {
       id: 5,
-      name: 'Tom Hanks',
-      image: '/images/celebrities/tom-hanks.jpg',
-      category: 'Film',
-      followers: '1.5M',
+      name: 'Sarith & Surith',
+      image: 'https://yt3.googleusercontent.com/cGqJb_2FSsTFYR1OvEy2yH70aXNq1BQTrkArBVH9OIct4rgOnzoilyt7ZSDkI2LJEQnMomhbaA=s900-c-k-c0x00ffffff-no-rj',
+      category: 'Music',
+      followers: '2.1M',
       isVerified: true,
-      isFavorite: false
-    },
-    {
-      id: 6,
-      name: 'Emma Watson',
-      image: '/images/celebrities/emma-watson.jpg',
-      category: 'Film',
-      followers: '2.8M',
-      isVerified: true,
-      isFavorite: false
+      isFavorite: true,
+      description: 'Dynamic Sri Lankan musical duo known for their innovative fusion of traditional and contemporary music.',
+      rating: 4.9,
+      price: 'From $4,500',
+      availability: 'Available for events',
+      specialties: ['Live Music', 'Concerts', 'Weddings', 'Corporate Events', 'Music Production']
     }
   ];
 
-  const categories = ['all', 'music', 'film', 'sports', 'business', 'influencer'];
+  const categories = [
+    { id: 'all', name: 'All Categories', icon: <FaStar /> },
+    { id: 'music', name: 'Music', icon: <FaMusic /> },
+    { id: 'film', name: 'Film & TV', icon: <FaFilm /> },
+    { id: 'sports', name: 'Sports', icon: <FaTrophy /> },
+    { id: 'business', name: 'Business', icon: <FaUserTie /> },
+    { id: 'influencer', name: 'Influencers', icon: <FaInstagram /> }
+  ];
 
   const filteredCelebrities = celebrities.filter(celebrity => {
-    const matchesSearch = celebrity.name.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = activeTab === 'all' || celebrity.category.toLowerCase() === activeTab;
+    const matchesSearch = celebrity.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         celebrity.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         celebrity.specialties.some(specialty => 
+                           specialty.toLowerCase().includes(searchTerm.toLowerCase())
+                         );
+    const matchesCategory = activeTab === 'all' || celebrity.category.toLowerCase().includes(activeTab);
     return matchesSearch && matchesCategory;
   });
+
+  const toggleFavorite = (celebrityId) => {
+    // In a real app, this would update the backend
+    console.log('Toggling favorite for celebrity:', celebrityId);
+  };
 
   return (
     <div className="explore-page">
       <div className="explore-header">
         <h1 className="explore-title">
           <FaStar className="title-icon" />
-          Explore Celebrities
+          Discover Sri Lankan Talent
         </h1>
         <p className="explore-subtitle">
-          Discover and connect with your favorite stars from around the world
+          Connect with the finest celebrities, artists, and personalities from Sri Lanka for your next event
         </p>
       </div>
 
@@ -89,7 +121,7 @@ const Explore = () => {
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Search celebrities..."
+            placeholder="Search celebrities, categories, or specialties..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="search-input"
@@ -99,11 +131,12 @@ const Explore = () => {
         <div className="category-filters">
           {categories.map((category) => (
             <button
-              key={category}
-              className={`category-button ${activeTab === category ? 'active' : ''}`}
-              onClick={() => setActiveTab(category)}
+              key={category.id}
+              className={`category-button ${activeTab === category.id ? 'active' : ''}`}
+              onClick={() => setActiveTab(category.id)}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              <span className="category-icon">{category.icon}</span>
+              {category.name}
             </button>
           ))}
         </div>
@@ -114,6 +147,11 @@ const Explore = () => {
         <span className="results-count">
           {filteredCelebrities.length} celebrities found
         </span>
+        {searchTerm && (
+          <span className="search-term">
+            for "{searchTerm}"
+          </span>
+        )}
       </div>
 
       {/* Celebrities Grid */}
@@ -122,7 +160,10 @@ const Explore = () => {
           <div key={celebrity.id} className="celebrity-card">
             <div className="celebrity-image">
               <img src={celebrity.image} alt={celebrity.name} />
-              <button className="favorite-button">
+              <button 
+                className={`favorite-button ${celebrity.isFavorite ? 'favorited' : ''}`}
+                onClick={() => toggleFavorite(celebrity.id)}
+              >
                 <FaHeart className={celebrity.isFavorite ? 'favorited' : ''} />
               </button>
               {celebrity.isVerified && (
@@ -130,15 +171,46 @@ const Explore = () => {
                   <FaStar />
                 </div>
               )}
+              <div className="celebrity-rating">
+                <FaStar />
+                <span>{celebrity.rating}</span>
+              </div>
             </div>
+            
             <div className="celebrity-info">
               <h3 className="celebrity-name">{celebrity.name}</h3>
               <p className="celebrity-category">{celebrity.category}</p>
+              <p className="celebrity-description">{celebrity.description}</p>
               <p className="celebrity-followers">{celebrity.followers} followers</p>
+              
+              <div className="celebrity-specialties">
+                {celebrity.specialties.slice(0, 3).map((specialty, index) => (
+                  <span key={index} className="specialty-tag">
+                    {specialty}
+                  </span>
+                ))}
+                {celebrity.specialties.length > 3 && (
+                  <span className="specialty-tag more">
+                    +{celebrity.specialties.length - 3} more
+                  </span>
+                )}
+              </div>
+              
+              <div className="celebrity-pricing">
+                <span className="price">{celebrity.price}</span>
+                <span className="availability">{celebrity.availability}</span>
+              </div>
             </div>
+            
             <div className="celebrity-actions">
-              <button className="action-button primary">Follow</button>
-              <button className="action-button secondary">Message</button>
+              <button className="action-button primary">
+                <FaStar />
+                Book Now
+              </button>
+              <button className="action-button secondary">
+                <FaSearch />
+                View Profile
+              </button>
             </div>
           </div>
         ))}
@@ -146,10 +218,38 @@ const Explore = () => {
 
       {filteredCelebrities.length === 0 && (
         <div className="empty-state">
+          <div className="empty-icon">
+            <FaSearch />
+          </div>
           <h3>No celebrities found</h3>
-          <p>Try adjusting your search terms or filters</p>
+          <p>Try adjusting your search terms or browse all categories</p>
+          <button 
+            className="empty-state-button"
+            onClick={() => {
+              setActiveTab('all');
+              setSearchTerm('');
+            }}
+          >
+            Browse All Celebrities
+          </button>
         </div>
       )}
+
+      {/* Featured Categories Section */}
+      <div className="featured-categories">
+        <h2>Popular Categories</h2>
+        <div className="categories-grid">
+          {categories.slice(1).map((category) => (
+            <div key={category.id} className="category-card">
+              <div className="category-icon-large">
+                {category.icon}
+              </div>
+              <h3>{category.name}</h3>
+              <p>Discover amazing talent in {category.name.toLowerCase()}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,17 +1,17 @@
 :root {
-  --lux-gold: linear-gradient(90deg, #d4af37 0%, #ffd700 50%, #f4e2d8 100%);
-  --lux-gold-solid: #ffd700;
-  --lux-gold-dark: #b8860b;
-  --lux-gold-glow: 0 0 16px #ffd70088, 0 2px 8px #d4af3788;
+  --lux-gold: linear-gradient(90deg, #d4af37 0%, #f5d26a 50%, #ffd700 100%);
+  --lux-gold-solid: #f5d26a;
+  --lux-gold-dark: #d4af37;
+  --lux-gold-glow: 0 0 16px rgba(245, 210, 106, 0.8), 0 2px 8px rgba(212, 175, 55, 0.8);
 }
 
-/* Luxury gold background for main page */
+/* Luxury blue background for main page */
 .explore-page {
   padding: 20px;
   max-width: 1400px;
   margin: 0 auto;
-  background: linear-gradient(120deg, #232323 0%, #2d2d2d 70%, #d4af37 100%);
-  box-shadow: 0 8px 32px #d4af3722;
+  background: linear-gradient(120deg, #071a3d 0%, #0a1c38 70%, #d4af37 100%);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
   border-radius: 18px;
 }
 

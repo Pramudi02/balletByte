@@ -9,13 +9,13 @@
 }
 
 .events-header h1 {
-  color: #ffd700;
+  color: #f5d26a;
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
 
 .events-header p {
-  color: #ccc;
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
@@ -27,9 +27,9 @@
 }
 
 .filter-button {
-  background: #333;
-  border: 1px solid #555;
-  color: #ccc;
+  background: #1a3a5a;
+  border: 1px solid #1a3a5a;
+  color: #ffffff;
   padding: 10px 20px;
   border-radius: 25px;
   cursor: pointer;
@@ -38,14 +38,14 @@
 }
 
 .filter-button.active {
-  background: #ffd700;
-  color: #000;
-  border-color: #ffd700;
+  background: #f5d26a;
+  color: #071a3d;
+  border-color: #f5d26a;
 }
 
 .filter-button:hover {
-  background: #ffd700;
-  color: #000;
+  background: #f5d26a;
+  color: #071a3d;
 }
 
 .events-grid {
@@ -55,15 +55,15 @@
 }
 
 .event-card {
-  background: #1a1a1a;
-  border: 1px solid #333;
+  background: #0e2447;
+  border: 1px solid #1a3a5a;
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .event-card:hover {
-  border-color: #ffd700;
+  border-color: #f5d26a;
   transform: translateY(-2px);
 }
 
@@ -78,13 +78,13 @@
 }
 
 .event-title {
-  color: #ffd700;
+  color: #f5d26a;
   font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
 .event-description {
-  color: #ccc;
+  color: #ffffff;
   margin-bottom: 15px;
   line-height: 1.5;
 }
@@ -97,7 +97,7 @@
 }
 
 .event-date {
-  color: #ffd700;
+  color: #f5d26a;
   font-weight: bold;
 }
 
