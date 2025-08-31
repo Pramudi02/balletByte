@@ -5,31 +5,31 @@ import './celebritiesProfile.css';
 const CelebritiesProfile = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
   const [profileData, setProfileData] = useState({
-    name: 'Sarah Johnson',
-    username: '@sarahjohnson',
-    email: 'sarah.johnson@email.com',
-    phone: '+1 (555) 123-4567',
-    bio: 'Award-winning actress and philanthropist. Passionate about storytelling and making a difference in the world.',
-    location: 'Los Angeles, CA',
-    website: 'www.sarahjohnson.com',
-    avatar: '/1.jpg',
+    name: 'Dinakshi Prayasad',
+    username: '@dinakshiprayasad',
+    email: 'dinakshi.prayasad@email.com',
+    phone: '+94 (11) 234-5678',
+    bio: 'Sri Lankan fashion icon and actress. Known for her stunning fashion shows and philanthropic work. Passionate about promoting Sri Lankan fashion globally.',
+    location: 'Colombo, Sri Lanka',
+    website: 'www.dinakshiprayasad.com',
+    avatar: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
     socialMedia: {
-      instagram: '@sarahjohnson',
-      twitter: '@sarahjohnson',
-      facebook: 'Sarah Johnson Official',
-      youtube: 'Sarah Johnson Channel'
+      instagram: '@dinakshiprayasad',
+      twitter: '@dinakshiprayasad',
+      facebook: 'Dinakshi Prayasad Official',
+      youtube: 'Dinakshi Prayasad Channel'
     },
-    categories: ['Acting', 'Philanthropy', 'Fashion', 'Lifestyle'],
+    categories: ['Fashion', 'Acting', 'Philanthropy', 'Lifestyle'],
     achievements: [
-      'Academy Award Winner 2023',
-      'Golden Globe Nominee 2022',
-      'Time 100 Most Influential People 2021',
-      'UNICEF Goodwill Ambassador'
+      'Sri Lankan Fashion Icon Award 2023',
+      'Best Actress - Sarasaviya Awards 2022',
+      'Most Influential Fashion Personality 2021',
+      'UNICEF Sri Lanka Ambassador'
     ],
     stats: {
-      followers: '2.5M',
-      posts: '1.8K',
-      events: '45'
+      followers: '1.2M',
+      posts: '2.1K',
+      events: '28'
     }
   });
 

@@ -5,58 +5,119 @@ const CelebritiesEvents = () => {
   const [events, setEvents] = useState([
     {
       id: 1,
-      title: 'Charity Gala Night',
-      description: 'A glamorous evening to support local charities with live performances and auctions.',
+      title: 'Dinakshi Prayasad - Fashion Show & Meet & Greet',
+      description: 'Join Sri Lankan fashion icon Dinakshi Prayasad for an exclusive fashion showcase and intimate meet & greet session. Experience the latest trends and get a chance to meet the style queen herself.',
       date: '2025-09-15',
       time: '19:00',
-      venue: 'Grand Ballroom, City Hotel',
+      venue: 'Cinnamon Grand Hotel, Colombo',
       venueType: 'offline',
-      eventType: 'charity',
-      banner: '/1.jpg',
+      eventType: 'meet-greet',
+      banner: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
       ticketing: {
         type: 'paid',
-        price: 150,
-        currency: 'USD'
+        price: 5000,
+        currency: 'LKR'
       },
       status: 'upcoming',
-      createdAt: '2024-12-01'
+      createdAt: '2024-12-01',
+      celebrity: 'Dinakshi Prayasad'
     },
     {
       id: 2,
-      title: 'Meet & Greet Session',
-      description: 'Exclusive fan meet-up and Q&A session with special surprises.',
+      title: 'Hemal Ranasinghe - Charity Gala Night',
+      description: 'A glamorous evening with Sri Lankan actor Hemal Ranasinghe to support local children\'s charities. Enjoy live performances, auctions, and exclusive meet & greet opportunities.',
       date: '2025-10-01',
-      time: '14:00',
-      venue: 'Downtown Studio',
+      time: '18:30',
+      venue: 'Galle Face Hotel, Colombo',
       venueType: 'offline',
-      eventType: 'meet-greet',
-      banner: '/2.jpg',
+      eventType: 'charity',
+      banner: 'https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Factor%2F8590814%2Fphoto%2F65e6899bf04ff.jpg&w=640&q=75',
       ticketing: {
-        type: 'free'
+        type: 'paid',
+        price: 7500,
+        currency: 'LKR'
       },
       status: 'upcoming',
-      createdAt: '2024-12-02'
+      createdAt: '2024-12-02',
+      celebrity: 'Hemal Ranasinghe'
     },
     {
       id: 3,
-      title: 'Live Q&A Session',
-      description: 'Join me for an intimate online Q&A where I answer your burning questions.',
+      title: 'Kumar Sangakkara - Cricket Masterclass',
+      description: 'Learn from the legendary Sri Lankan cricketer Kumar Sangakkara in this exclusive cricket workshop. Perfect for aspiring cricketers and fans who want to improve their game.',
       date: '2025-08-20',
+      time: '14:00',
+      venue: 'SSC Cricket Ground, Colombo',
+      venueType: 'offline',
+      eventType: 'workshop',
+      banner: 'https://i.pinimg.com/1200x/9b/0d/77/9b0d7728bb62a423c155bf5bf060270f.jpg',
+      ticketing: {
+        type: 'paid',
+        price: 3000,
+        currency: 'LKR'
+      },
+      status: 'completed',
+      createdAt: '2024-11-15',
+      celebrity: 'Kumar Sangakkara'
+    },
+    {
+      id: 4,
+      title: 'Dinakshi Prayasad - Live Instagram Q&A',
+      description: 'Join fashion influencer Dinakshi Prayasad for an intimate online Q&A session where she answers your questions about fashion, lifestyle, and her journey in the industry.',
+      date: '2025-09-25',
       time: '20:00',
       venue: 'Instagram Live',
       venueType: 'online',
       eventType: 'live-qa',
-      banner: '/3.jpg',
+      banner: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
       ticketing: {
         type: 'free'
       },
-      status: 'completed',
-      createdAt: '2024-11-15'
+      status: 'upcoming',
+      createdAt: '2024-12-05',
+      celebrity: 'Dinakshi Prayasad'
+    },
+    {
+      id: 5,
+      title: 'Hemal Ranasinghe - Movie Premiere Night',
+      description: 'Be among the first to watch Hemal Ranasinghe\'s latest film at this exclusive premiere event. Includes red carpet experience and post-screening Q&A session.',
+      date: '2025-11-10',
+      time: '19:30',
+      venue: 'Liberty Cinema, Colombo',
+      venueType: 'offline',
+      eventType: 'premiere',
+      banner: 'https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Factor%2F8590814%2Fphoto%2F65e6899bf04ff.jpg&w=640&q=75',
+      ticketing: {
+        type: 'paid',
+        price: 2500,
+        currency: 'LKR'
+      },
+      status: 'upcoming',
+      createdAt: '2024-12-10',
+      celebrity: 'Hemal Ranasinghe'
+    },
+    {
+      id: 6,
+      title: 'Kumar Sangakkara - Book Launch & Signing',
+      description: 'Join cricket legend Kumar Sangakkara for the launch of his autobiography. Get your copy signed and enjoy an evening of cricket stories and insights.',
+      date: '2025-10-15',
+      time: '16:00',
+      venue: 'Barefoot Bookstore, Colombo',
+      venueType: 'offline',
+      eventType: 'meet-greet',
+      banner: 'https://i.pinimg.com/1200x/9b/0d/77/9b0d7728bb62a423c155bf5bf060270f.jpg',
+      ticketing: {
+        type: 'free'
+      },
+      status: 'upcoming',
+      createdAt: '2024-12-12',
+      celebrity: 'Kumar Sangakkara'
     }
   ]);
 
   const [form, setForm] = useState({
     title: '',
+    celebrity: '',
     description: '',
     date: '',
     time: '',
@@ -66,12 +127,13 @@ const CelebritiesEvents = () => {
     ticketing: {
       type: 'free',
       price: 0,
-      currency: 'USD'
+      currency: 'LKR'
     }
   });
 
   const [showForm, setShowForm] = useState(false);
   const [filter, setFilter] = useState('all');
+  const [celebrityFilter, setCelebrityFilter] = useState('all');
   const [sortBy, setSortBy] = useState('date');
   const [bannerPreview, setBannerPreview] = useState(null);
   const fileInputRef = useRef(null);
@@ -81,9 +143,13 @@ const CelebritiesEvents = () => {
     { value: 'meet-greet', label: 'Meet & Greet', icon: 'fa-handshake' },
     { value: 'live-qa', label: 'Live Q&A', icon: 'fa-comments' },
     { value: 'charity', label: 'Charity', icon: 'fa-heart' },
-    { value: 'premiere', label: 'Premiere', icon: 'fa-film' },
+    { value: 'premiere', label: 'Movie Premiere', icon: 'fa-film' },
     { value: 'workshop', label: 'Workshop', icon: 'fa-graduation-cap' },
     { value: 'photoshoot', label: 'Photoshoot', icon: 'fa-camera' },
+    { value: 'fashion-show', label: 'Fashion Show', icon: 'fa-tshirt' },
+    { value: 'book-launch', label: 'Book Launch', icon: 'fa-book' },
+    { value: 'cricket-clinic', label: 'Cricket Clinic', icon: 'fa-baseball-ball' },
+    { value: 'dance-performance', label: 'Dance Performance', icon: 'fa-music' },
     { value: 'other', label: 'Other', icon: 'fa-star' }
   ];
 
@@ -114,7 +180,7 @@ const CelebritiesEvents = () => {
 
   const handleAddEvent = (e) => {
     e.preventDefault();
-    if (form.title && form.date && form.venue) {
+    if (form.title && form.celebrity && form.date && form.venue) {
       const newEvent = {
         id: Date.now(),
         ...form,
@@ -126,6 +192,7 @@ const CelebritiesEvents = () => {
       setEvents(prev => [newEvent, ...prev]);
       setForm({
         title: '',
+        celebrity: '',
         description: '',
         date: '',
         time: '',
@@ -135,7 +202,7 @@ const CelebritiesEvents = () => {
         ticketing: {
           type: 'free',
           price: 0,
-          currency: 'USD'
+          currency: 'LKR'
         }
       });
       setBannerPreview(null);
@@ -155,8 +222,13 @@ const CelebritiesEvents = () => {
 
   const filteredAndSortedEvents = events
     .filter(event => {
-      if (filter === 'all') return true;
-      return event.status === filter;
+      // Filter by status
+      const statusMatch = filter === 'all' || event.status === filter;
+      
+      // Filter by celebrity
+      const celebrityMatch = celebrityFilter === 'all' || event.celebrity === 'Dinakshi Prayasad';
+      
+      return statusMatch && celebrityMatch;
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -190,8 +262,8 @@ const CelebritiesEvents = () => {
     <section className="cey-events">
       <header className="cey-events__header">
         <div className="cey-events__titles">
-          <h2 className="cey-events__title">Celebrities Events</h2>
-          <p className="cey-events__subtitle">Create, manage and promote your events</p>
+          <h2 className="cey-events__title">Sri Lankan Celebrities Events</h2>
+          <p className="cey-events__subtitle">Create, manage and promote your events with Sri Lankan celebrities</p>
         </div>
         <div className="cey-events__actions">
           <button 
@@ -225,6 +297,22 @@ const CelebritiesEvents = () => {
                       placeholder="Enter event title"
             required
           />
+                  </label>
+
+                  <label className="cey-field">
+                    <span className="cey-field__label">
+                      <i className="fa-solid fa-user" />
+                      Celebrity Name
+                    </span>
+                    <input
+                      className="cey-input cey-input--enhanced"
+                      type="text"
+                      name="celebrity"
+                      value={form.celebrity}
+                      onChange={handleInputChange}
+                      placeholder="e.g., Dinakshi Prayasad, Hemal Ranasinghe, Kumar Sangakkara"
+                      required
+                    />
                   </label>
 
                   <label className="cey-field">
@@ -385,10 +473,10 @@ const CelebritiesEvents = () => {
                               value={form.ticketing.currency}
             onChange={handleInputChange}
                             >
-                              <option value="USD">USD</option>
-                              <option value="EUR">EUR</option>
-                              <option value="GBP">GBP</option>
-                              <option value="JPY">JPY</option>
+                              <option value="LKR">LKR (Sri Lankan Rupee)</option>
+                              <option value="USD">USD (US Dollar)</option>
+                              <option value="EUR">EUR (Euro)</option>
+                              <option value="GBP">GBP (British Pound)</option>
                             </select>
                             <i className="fa-solid fa-chevron-down" />
                           </div>
@@ -460,10 +548,29 @@ const CelebritiesEvents = () => {
       {/* Enhanced Controls */}
       <div className="cey-controls">
         <div className="cey-controls__left">
+          {/* Event Type Filter Buttons */}
+          <div className="cey-filter-buttons">
+            <button 
+              className={`cey-filter-btn ${celebrityFilter === 'all' ? 'cey-filter-btn--active' : ''}`}
+              onClick={() => setCelebrityFilter('all')}
+            >
+              <i className="fa-solid fa-globe" />
+              All Events
+            </button>
+            <button 
+              className={`cey-filter-btn ${celebrityFilter === 'my' ? 'cey-filter-btn--active' : ''}`}
+              onClick={() => setCelebrityFilter('my')}
+            >
+              <i className="fa-solid fa-user" />
+              My Events
+            </button>
+          </div>
+          
+          {/* Status Filter */}
           <div className="cey-select-wrap">
             <i className="fa-solid fa-filter" />
             <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-              <option value="all">All Events</option>
+              <option value="all">All Status</option>
               <option value="upcoming">Upcoming</option>
               <option value="ongoing">Ongoing</option>
               <option value="completed">Completed</option>
@@ -499,12 +606,14 @@ const CelebritiesEvents = () => {
             <div className="cey-empty__content">
               <h3>No events found</h3>
               <p>
-                {filter !== 'all' 
-                  ? 'No events match your current filter' 
-                  : 'Create your first event to get started'
+                {celebrityFilter === 'my' 
+                  ? 'No events found for Dinakshi Prayasad' 
+                  : filter !== 'all' 
+                    ? 'No events match your current filter' 
+                    : 'Create your first event to get started'
                 }
               </p>
-              {filter === 'all' && (
+              {celebrityFilter === 'all' && filter === 'all' && (
                 <button className="cey-btn cey-btn--gold" onClick={() => setShowForm(true)}>
                   <i className="fa-solid fa-plus" />
                   Create Event
@@ -568,6 +677,12 @@ const CelebritiesEvents = () => {
                 </div>
                 
                 <h3 className="cey-event-card__title">{event.title}</h3>
+                {event.celebrity && (
+                  <div className="cey-event-card__celebrity">
+                    <i className="fa-solid fa-star" />
+                    <span>{event.celebrity}</span>
+                  </div>
+                )}
                 <p className="cey-event-card__description">{event.description}</p>
                 
                 <div className="cey-event-card__details">

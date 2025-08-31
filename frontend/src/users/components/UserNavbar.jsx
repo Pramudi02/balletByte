@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaHeart, FaCalendarAlt, FaComments, FaBell, FaUser } from 'react-icons/fa';
+import { FaHome, FaHeart, FaCalendarAlt, FaComments, FaSearch, FaUser } from 'react-icons/fa';
 import './UserNavbar.css';
 
 const UserNavbar = () => {
-  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const location = useLocation();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log('Searching for:', searchQuery);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
 
   const isActive = (path) => location.pathname === path;
 
@@ -16,83 +26,43 @@ const UserNavbar = () => {
         {/* Logo */}
         <Link to="/user/home" className="navbar-logo">
           <div className="logo-text">
-            <span className="logo-main">Star</span>
-            <span className="logo-accent">Connect</span>
+            <span className="logo-main">CeyElite</span>
           </div>
         </Link>
 
         {/* Navigation Links */}
         <div className="navbar-links">
-          <Link 
-            to="/user/home" 
-            className={`nav-link ${isActive('/user/home') ? 'active' : ''}`}
-          >
-            <span>Home</span>
-          </Link>
-          
-          <Link 
-            to="/user/favorites" 
-            className={`nav-link ${isActive('/user/favorites') ? 'active' : ''}`}
-          >
-            <span>Favorites</span>
-          </Link>
-          
-          <Link 
-            to="/user/events" 
-            className={`nav-link ${isActive('/user/events') ? 'active' : ''}`}
-          >
-            <span>Events</span>
-          </Link>
-          
-          <Link 
-            to="/user/chat" 
-            className={`nav-link ${isActive('/user/chat') ? 'active' : ''}`}
-          >
-            <span>Chat</span>
-          </Link>
-          
-          <Link 
-            to="/user/explore" 
-            className={`nav-link ${isActive('/user/explore') ? 'active' : ''}`}
-          >
-            <span>Explore</span>
-          </Link>
+          <ul className="nav-links-list">
+            <li><Link to="/user/home" className={`nav-link ${isActive('/user/home') ? 'active' : ''}`}>Home</Link></li>
+            <li><Link to="/user/favorites" className={`nav-link ${isActive('/user/favorites') ? 'active' : ''}`}>Favorites</Link></li>
+            <li><Link to="/user/events" className={`nav-link ${isActive('/user/events') ? 'active' : ''}`}>Events</Link></li>
+            <li><Link to="/user/chat" className={`nav-link ${isActive('/user/chat') ? 'active' : ''}`}>Chat</Link></li>
+            <li><Link to="/user/explore" className={`nav-link ${isActive('/user/explore') ? 'active' : ''}`}>Explore</Link></li>
+          </ul>
         </div>
 
         {/* Right Side Icons */}
         <div className="navbar-right">
-          {/* Notifications */}
+          {/* Search */}
           <div className="nav-icon-container">
             <button 
-              className="nav-icon-button"
-              onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
+              className="nav-icon-button search-button"
+              onClick={() => setIsSearchOpen(!isSearchOpen)}
             >
-              <FaBell className="nav-icon" />
-              <span className="notification-badge">3</span>
+              <FaSearch className="nav-icon" />
             </button>
             
-            {isNotificationsOpen && (
-              <div className="dropdown-menu notifications-dropdown">
-                <div className="dropdown-header">
-                  <h3>Notifications</h3>
-                </div>
-                <div className="dropdown-content">
-                  <div className="notification-item">
-                    <div className="notification-text">New event: Taylor Swift Concert</div>
-                    <div className="notification-time">2 hours ago</div>
-                  </div>
-                  <div className="notification-item">
-                    <div className="notification-text">Beyoncé liked your comment</div>
-                    <div className="notification-time">5 hours ago</div>
-                  </div>
-                  <div className="notification-item">
-                    <div className="notification-text">New message from Justin Bieber</div>
-                    <div className="notification-time">1 day ago</div>
-                  </div>
-                </div>
-                <Link to="/user/notifications" className="dropdown-footer">
-                  View all notifications
-                </Link>
+            {isSearchOpen && (
+              <div className="search-dropdown">
+                <form onSubmit={handleSearchSubmit}>
+                  <input
+                    type="text"
+                    placeholder="Search celebrities..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="search-input"
+                  />
+                </form>
               </div>
             )}
           </div>
@@ -100,7 +70,7 @@ const UserNavbar = () => {
           {/* Profile */}
           <div className="nav-icon-container">
             <button 
-              className="nav-icon-button"
+              className="nav-icon-button profile-button"
               onClick={() => setIsProfileOpen(!isProfileOpen)}
             >
               <FaUser className="nav-icon" />

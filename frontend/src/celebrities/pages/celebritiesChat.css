@@ -1,12 +1,24 @@
-/* Blue and Gold themed styles for CelebritiesChat page - matching other pages */
-.cey-chat { 
-  background: #061a33; 
+/* Enhanced Blue and Gold themed styles for CelebritiesChat page */
+.celebrities-chat-container { 
+  background: linear-gradient(135deg, #061a33, #0a1f3a); 
   color: #fff; 
   min-height: 100vh; 
   padding: 90px 5vw 56px; 
+  position: relative;
 }
 
-.cey-chat__header { 
+.celebrities-chat-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23f5d26a" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+}
+
+.celebrities-chat-header { 
   display: flex; 
   gap: 18px; 
   flex-wrap: wrap; 
@@ -16,32 +28,44 @@
   margin: 0 auto 24px; 
 }
 
-.cey-chat__titles { 
+.celebrities-chat-titles { 
   display: grid; 
   gap: 6px; 
 }
 
-.cey-chat__title { 
+.celebrities-chat-title { 
   margin: 0; 
   font-size: clamp(22px, 3.2vw, 36px); 
   font-weight: 800; 
   letter-spacing: .5px; 
   color: #f5d26a; 
-  text-shadow: 0 2px 14px rgba(212,175,55,.25); 
+  text-shadow: 0 2px 14px rgba(212,175,55,.25), 0 0 30px rgba(245,210,106,0.1); 
+  position: relative;
 }
 
-.cey-chat__subtitle { 
+.celebrities-chat-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f5d26a, transparent);
+  border-radius: 2px;
+}
+
+.celebrities-chat-subtitle { 
   margin: 0; 
   opacity: .9; 
 }
 
-.cey-chat__actions { 
+.celebrities-chat-actions { 
   display: flex; 
   align-items: center; 
   gap: 16px; 
 }
 
-.cey-chat__type-toggle {
+.celebrities-chat-type-toggle {
   display: flex;
   background: rgba(14,36,71,0.8);
   border-radius: 12px;
@@ -49,7 +73,7 @@
   border: 1px solid rgba(212,175,55,.2);
 }
 
-.cey-btn--toggle {
+.celebrities-chat-toggle-btn {
   background: transparent;
   border: none;
   color: rgba(255,255,255,0.6);
@@ -64,34 +88,48 @@
   font-weight: 600;
 }
 
-.cey-btn--toggle:hover {
+.celebrities-chat-toggle-btn:hover {
   color: #ffd36b;
 }
 
-.cey-btn--toggle.active {
+.celebrities-chat-toggle-btn.active {
   background: linear-gradient(90deg, #d4af37, #ffd36b);
   color: #000;
   transform: scale(1.05);
 }
 
-/* Chat Container */
-.cey-chat__container {
+/* Enhanced Chat Container */
+.celebrities-chat-main-container {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 380px 1fr;
   gap: 24px;
   height: calc(100vh - 180px);
-  background: linear-gradient(135deg, rgba(14,36,71,0.9), rgba(7,26,51,0.95));
-  border: 1px solid rgba(212,175,55,.2);
+  background: linear-gradient(135deg, rgba(14,36,71,0.95), rgba(7,26,51,0.98));
+  border: 1px solid rgba(212,175,55,.3);
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(212,175,55,0.1) inset,
+    0 0 40px rgba(245,210,106,0.05);
   position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.celebrities-chat-main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.5), transparent);
 }
 
 /* Sidebar */
-.cey-chat__sidebar {
+.celebrities-chat-sidebar {
   background: linear-gradient(180deg, #0e2447, #071a33);
   border-right: 1px solid rgba(212,175,55,.2);
   display: flex;
@@ -100,13 +138,13 @@
   height: 100%;
 }
 
-.cey-chat__section {
+.celebrities-chat-section {
   padding: 20px;
   border-bottom: 1px solid rgba(212,175,55,.1);
   flex-shrink: 0;
 }
 
-.cey-chat__section-title {
+.celebrities-chat-section-title {
   margin: 0 0 16px 0;
   font-size: 15px;
   font-weight: 700;
@@ -118,18 +156,18 @@
   gap: 8px;
 }
 
-.cey-chat__section-title i {
+.celebrities-chat-section-title i {
   font-size: 12px;
 }
 
 /* Pending Requests */
-.cey-chat__requests {
+.celebrities-chat-requests {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.cey-chat__request {
+.celebrities-chat-request {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -140,12 +178,12 @@
   transition: all .3s ease;
 }
 
-.cey-chat__request:hover {
+.celebrities-chat-request:hover {
   background: rgba(212,175,55,0.15);
   border-color: rgba(212,175,55,0.3);
 }
 
-.cey-chat__request-avatar {
+.celebrities-chat-request-avatar {
   position: relative;
   width: 48px;
   height: 48px;
@@ -154,25 +192,25 @@
   flex-shrink: 0;
 }
 
-.cey-chat__request-avatar img {
+.celebrities-chat-request-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.cey-chat__request-content {
+.celebrities-chat-request-content {
   flex: 1;
   min-width: 0;
 }
 
-.cey-chat__request-name {
+.celebrities-chat-request-name {
   margin: 0 0 4px 0;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
 }
 
-.cey-chat__request-message {
+.celebrities-chat-request-message {
   margin: 0 0 4px 0;
   font-size: 13px;
   color: rgba(255,255,255,0.8);
@@ -183,38 +221,38 @@
   overflow: hidden;
 }
 
-.cey-chat__request-time {
+.celebrities-chat-request-time {
   font-size: 11px;
   color: rgba(255,255,255,0.6);
 }
 
-.cey-chat__request-actions {
+.celebrities-chat-request-actions {
   display: flex;
   gap: 6px;
 }
 
-.cey-btn--accept {
+.celebrities-chat-btn-accept {
   background: linear-gradient(135deg, #4ade80, #22c55e);
   color: #fff;
   border: none;
 }
 
-.cey-btn--accept:hover {
+.celebrities-chat-btn-accept:hover {
   transform: scale(1.1);
 }
 
-.cey-btn--decline {
+.celebrities-chat-btn-decline {
   background: linear-gradient(135deg, #ef4444, #dc2626);
   color: #fff;
   border: none;
 }
 
-.cey-btn--decline:hover {
+.celebrities-chat-btn-decline:hover {
   transform: scale(1.1);
 }
 
 /* Chat List */
-.cey-chat__list {
+.celebrities-chat-list {
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -225,44 +263,64 @@
   scrollbar-color: rgba(212,175,55,0.3) transparent;
 }
 
-.cey-chat__list::-webkit-scrollbar {
+.celebrities-chat-list::-webkit-scrollbar {
   width: 6px;
 }
 
-.cey-chat__list::-webkit-scrollbar-track {
+.celebrities-chat-list::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.cey-chat__list::-webkit-scrollbar-thumb {
+.celebrities-chat-list::-webkit-scrollbar-thumb {
   background: rgba(212,175,55,0.3);
   border-radius: 3px;
 }
 
-.cey-chat__list::-webkit-scrollbar-thumb:hover {
+.celebrities-chat-list::-webkit-scrollbar-thumb:hover {
   background: rgba(212,175,55,0.5);
 }
 
-.cey-chat__item {
+.celebrities-chat-item {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 18px 22px;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
   border-left: 3px solid transparent;
+  position: relative;
+  overflow: hidden;
 }
 
-.cey-chat__item:hover {
-  background: rgba(212,175,55,0.1);
-  border-left-color: rgba(212,175,55,0.3);
+.celebrities-chat-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(212,175,55,0.05), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
 }
 
-.cey-chat__item.active {
-  background: rgba(212,175,55,0.15);
+.celebrities-chat-item:hover::before {
+  transform: translateX(0);
+}
+
+.celebrities-chat-item:hover {
+  background: rgba(212,175,55,0.08);
+  border-left-color: rgba(212,175,55,0.4);
+  transform: translateX(4px);
+}
+
+.celebrities-chat-item.active {
+  background: linear-gradient(90deg, rgba(212,175,55,0.15), rgba(212,175,55,0.05));
   border-left-color: #ffd36b;
+  box-shadow: 0 0 20px rgba(245,210,106,0.1);
 }
 
-.cey-chat__item-avatar {
+.celebrities-chat-item-avatar {
   position: relative;
   width: 56px;
   height: 56px;
@@ -271,13 +329,13 @@
   flex-shrink: 0;
 }
 
-.cey-chat__item-avatar img {
+.celebrities-chat-item-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.cey-chat__item-status {
+.celebrities-chat-item-status {
   position: absolute;
   bottom: 2px;
   right: 2px;
@@ -287,31 +345,31 @@
   border: 2px solid #0e2447;
 }
 
-.cey-chat__item-content {
+.celebrities-chat-item-content {
   flex: 1;
   min-width: 0;
 }
 
-.cey-chat__item-header {
+.celebrities-chat-item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 4px;
 }
 
-.cey-chat__item-name {
+.celebrities-chat-item-name {
   margin: 0;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
 }
 
-.cey-chat__item-time {
+.celebrities-chat-item-time {
   font-size: 12px;
   color: rgba(255,255,255,0.6);
 }
 
-.cey-chat__item-message {
+.celebrities-chat-item-message {
   margin: 0 0 4px 0;
   font-size: 14px;
   color: rgba(255,255,255,0.8);
@@ -322,13 +380,13 @@
   overflow: hidden;
 }
 
-.cey-chat__item-participants {
+.celebrities-chat-item-participants {
   font-size: 11px;
   color: #ffd36b;
   font-weight: 500;
 }
 
-.cey-chat__item-badge {
+.celebrities-chat-item-badge {
   background: linear-gradient(135deg, #ef4444, #dc2626);
   color: #fff;
   font-size: 11px;
@@ -340,7 +398,7 @@
 }
 
 /* Main Chat Area */
-.cey-chat__main {
+.celebrities-chat-main {
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, rgba(14,36,71,0.8), rgba(7,26,51,0.9));
@@ -349,7 +407,7 @@
   position: relative;
 }
 
-.cey-chat__main-header {
+.celebrities-chat-main-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -359,13 +417,13 @@
   flex-shrink: 0;
 }
 
-.cey-chat__main-user {
+.celebrities-chat-main-user {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.cey-chat__main-avatar {
+.celebrities-chat-main-avatar {
   position: relative;
   width: 56px;
   height: 56px;
@@ -373,13 +431,13 @@
   overflow: hidden;
 }
 
-.cey-chat__main-avatar img {
+.celebrities-chat-main-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.cey-chat__main-status {
+.celebrities-chat-main-status {
   position: absolute;
   bottom: 2px;
   right: 2px;
@@ -389,30 +447,30 @@
   border: 2px solid #0e2447;
 }
 
-.cey-chat__main-info {
+.celebrities-chat-main-info {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
 
-.cey-chat__main-name {
+.celebrities-chat-main-name {
   margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #fff;
 }
 
-.cey-chat__main-status-text {
+.celebrities-chat-main-status-text {
   font-size: 12px;
   color: rgba(255,255,255,0.7);
 }
 
-.cey-chat__main-actions {
+.celebrities-chat-main-actions {
   display: flex;
   gap: 8px;
 }
 
-.cey-btn--icon {
+.celebrities-chat-btn-icon {
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -425,7 +483,7 @@
   transition: all .3s ease;
 }
 
-.cey-btn--icon:hover {
+.celebrities-chat-btn-icon:hover {
   background: rgba(212,175,55,0.2);
   border-color: #ffd36b;
   transform: scale(1.05);
@@ -491,17 +549,31 @@
 }
 
 .cey-message__content {
-  background: rgba(212,175,55,0.1);
-  border: 1px solid rgba(212,175,55,0.2);
-  border-radius: 18px;
-  padding: 14px 18px;
+  background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.08));
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 20px;
+  padding: 16px 20px;
   position: relative;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.cey-message__content:hover {
+  border-color: rgba(212,175,55,0.4);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
 .cey-message--own .cey-message__content {
   background: linear-gradient(135deg, #d4af37, #ffd36b);
   border-color: #ffd36b;
   color: #000;
+  box-shadow: 0 4px 16px rgba(212,175,55,0.3);
+}
+
+.cey-message--own .cey-message__content:hover {
+  box-shadow: 0 6px 24px rgba(212,175,55,0.4);
+  transform: translateY(-2px);
 }
 
 .cey-message__sender {
@@ -582,11 +654,22 @@
 
 /* Input Area */
 .cey-chat__input {
-  padding: 12px 16px;
-  border-top: 1px solid rgba(212,175,55,.2);
-  background: rgba(212,175,55,0.05);
+  padding: 16px 20px;
+  border-top: 1px solid rgba(212,175,55,.3);
+  background: linear-gradient(180deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));
   position: relative;
   flex-shrink: 0;
+  backdrop-filter: blur(10px);
+}
+
+.cey-chat__input::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212,175,55,0.6), transparent);
 }
 
 .cey-chat__input-actions {
@@ -603,16 +686,32 @@
 
 .cey-chat__input-field {
   flex: 1;
-  background: linear-gradient(145deg, #0e2447, #071a33);
+  background: linear-gradient(145deg, rgba(14,36,71,0.9), rgba(7,26,51,0.95));
   border: 1px solid rgba(212,175,55,0.3);
   color: #fff;
-  padding: 10px 16px;
-  border-radius: 20px;
+  padding: 12px 18px;
+  border-radius: 24px;
   font-size: 15px;
   resize: none;
-  min-height: 44px;
-  max-height: 100px;
-  transition: all .3s ease;
+  min-height: 48px;
+  max-height: 120px;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cey-chat__input-field:focus {
+  outline: none;
+  border-color: rgba(212,175,55,0.6);
+  box-shadow: 
+    0 4px 16px rgba(0,0,0,0.2),
+    0 0 0 2px rgba(212,175,55,0.1);
+  transform: translateY(-1px);
+}
+
+.cey-chat__input-field::placeholder {
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
 }
 
 .cey-chat__input-field:focus {
@@ -626,8 +725,8 @@
 }
 
 .cey-btn--send {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, #d4af37, #ffd36b);
   border: none;
@@ -635,34 +734,74 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .3s ease;
+  transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
   flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cey-btn--send::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .cey-btn--send:hover:not(:disabled) {
-  transform: scale(1.1);
-  box-shadow: 0 4px 15px rgba(212,175,55,.4);
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212,175,55,0.5);
+}
+
+.cey-btn--send:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.cey-btn--send:active:not(:disabled) {
+  transform: scale(0.95);
 }
 
 .cey-btn--send:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Emoji Picker */
+/* Enhanced Emoji Picker */
 .cey-chat__emoji-picker {
   position: absolute;
   bottom: 100%;
   left: 24px;
-  background: linear-gradient(135deg, #0e2447, #071a33);
+  background: linear-gradient(135deg, rgba(14,36,71,0.95), rgba(7,26,51,0.98));
   border: 1px solid rgba(212,175,55,0.3);
-  border-radius: 12px;
-  padding: 12px;
+  border-radius: 16px;
+  padding: 16px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-  margin-bottom: 8px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  gap: 10px;
+  margin-bottom: 12px;
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.4),
+    0 0 0 1px rgba(212,175,55,0.1) inset;
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cey-chat__emoji {

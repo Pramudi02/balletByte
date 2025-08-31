@@ -1,7 +1,6 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import CelebrityNavbar from '../components/celebritiesNavbar';
-import Celebrities from '../pages/celebrities';
 import CelebritiesHome from '../pages/celebritiesHome';
 import CelebritiesGallery from '../pages/celebritiesGallery';
 import CelebritiesEvents from '../pages/celebritiesEvents';
@@ -14,10 +13,8 @@ const CelebritiesRoutes = () => {
       <CelebrityNavbar />
       <main className="main-content">
         <Routes>
-          {/* Landing at /celebrities */}
-          <Route index element={<Celebrities />} />
-          {/* Explicit Home */}
-          <Route path="home" element={<CelebritiesHome />} />
+          {/* Home page as index route */}
+          <Route index element={<CelebritiesHome />} />
           <Route path="gallery" element={<CelebritiesGallery />} />
           <Route path="events" element={<CelebritiesEvents />} />
           <Route path="chat" element={<CelebritiesChat />} />
