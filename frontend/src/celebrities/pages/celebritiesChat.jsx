@@ -17,9 +17,9 @@ const CelebritiesChat = () => {
     {
       id: 1,
       type: 'one-to-one',
-      name: 'Sarah Johnson',
-      avatar: '/1.jpg',
-      lastMessage: 'Thank you for the amazing concert!',
+      name: 'Dinakshi Prayasad',
+      avatar: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
+      lastMessage: 'Thank you for the amazing fashion show!',
       lastMessageTime: '2 min ago',
       unreadCount: 3,
       status: 'online',
@@ -27,7 +27,7 @@ const CelebritiesChat = () => {
         {
           id: 1,
           sender: 'fan',
-          text: 'Hi! I loved your latest movie!',
+          text: 'Hi! I loved your latest fashion collection!',
           time: '10:30 AM',
           status: 'seen',
           type: 'text'
@@ -43,7 +43,7 @@ const CelebritiesChat = () => {
         {
           id: 3,
           sender: 'fan',
-          text: 'Thank you for the amazing concert!',
+          text: 'Thank you for the amazing fashion show!',
           time: '10:35 AM',
           status: 'delivered',
           type: 'text'
@@ -53,9 +53,9 @@ const CelebritiesChat = () => {
     {
       id: 2,
       type: 'one-to-one',
-      name: 'Mike Chen',
-      avatar: '/2.jpg',
-      lastMessage: 'Can\'t wait for your next event!',
+      name: 'Hemal Ranasinghe',
+      avatar: 'https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Factor%2F8590814%2Fphoto%2F65e6899bf04ff.jpg&w=640&q=75',
+      lastMessage: 'Can\'t wait for your next movie!',
       lastMessageTime: '1 hour ago',
       unreadCount: 0,
       status: 'offline',
@@ -63,7 +63,7 @@ const CelebritiesChat = () => {
         {
           id: 1,
           sender: 'fan',
-          text: 'Can\'t wait for your next event!',
+          text: 'Can\'t wait for your next movie!',
           time: '9:15 AM',
           status: 'seen',
           type: 'text'
@@ -73,8 +73,8 @@ const CelebritiesChat = () => {
     {
       id: 3,
       type: 'group',
-      name: 'Fan Club Live Chat',
-      avatar: '/3.jpg',
+      name: 'Sri Lankan Cinema Fan Club',
+      avatar: 'https://i.pinimg.com/1200x/9b/0d/77/9b0d7728bb62a423c155bf5bf060270f.jpg',
       lastMessage: 'Welcome everyone to today\'s Q&A session!',
       lastMessageTime: '5 min ago',
       unreadCount: 12,
@@ -115,15 +115,15 @@ const CelebritiesChat = () => {
   const [pendingRequests, setPendingRequests] = useState([
     {
       id: 1,
-      name: 'David Wilson',
-      avatar: '/4.jpg',
+      name: 'Kumara Silva',
+      avatar: 'https://i.pinimg.com/736x/5e/96/d9/5e96d951e3097e9fa49c7d3da2b8ef99.jpg',
       message: 'Hi! I\'m a huge fan and would love to chat with you.',
       time: '5 min ago'
     },
     {
       id: 2,
-      name: 'Lisa Park',
-      avatar: '/5.jpg',
+      name: 'Nimali Perera',
+      avatar: 'https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Factor%2F8590814%2Fphoto%2F65e6899bf04ff.jpg&w=640&q=75',
       message: 'Hello! I have some questions about your upcoming project.',
       time: '15 min ago'
     }
@@ -277,23 +277,23 @@ const CelebritiesChat = () => {
   };
 
   return (
-    <section className="cey-chat">
-      <header className="cey-chat__header">
-        <div className="cey-chat__titles">
-          <h2 className="cey-chat__title">Celebrities Chat</h2>
-          <p className="cey-chat__subtitle">Connect with your fans in real-time</p>
+    <section className="celebrities-chat-container">
+      <header className="celebrities-chat-header">
+        <div className="celebrities-chat-titles">
+          <h2 className="celebrities-chat-title">Celebrities Chat</h2>
+          <p className="celebrities-chat-subtitle">Connect with your fans in real-time</p>
         </div>
-        <div className="cey-chat__actions">
-          <div className="cey-chat__type-toggle">
+        <div className="celebrities-chat-actions">
+          <div className="celebrities-chat-type-toggle">
             <button 
-              className={`cey-btn cey-btn--toggle ${chatType === 'one-to-one' ? 'active' : ''}`}
+              className={`celebrities-chat-toggle-btn ${chatType === 'one-to-one' ? 'active' : ''}`}
               onClick={() => setChatType('one-to-one')}
             >
               <i className="fa-solid fa-user" />
               One-to-One
             </button>
             <button 
-              className={`cey-btn cey-btn--toggle ${chatType === 'group' ? 'active' : ''}`}
+              className={`celebrities-chat-toggle-btn ${chatType === 'group' ? 'active' : ''}`}
               onClick={() => setChatType('group')}
             >
               <i className="fa-solid fa-users" />
@@ -303,36 +303,36 @@ const CelebritiesChat = () => {
         </div>
       </header>
 
-      <div className="cey-chat__container">
+      <div className="celebrities-chat-main-container">
         {/* Chat List Sidebar */}
-        <div className="cey-chat__sidebar">
+        <div className="celebrities-chat-sidebar">
           {/* Pending Requests */}
           {pendingRequests.length > 0 && (
-            <div className="cey-chat__section">
-              <h3 className="cey-chat__section-title">
+            <div className="celebrities-chat-section">
+              <h3 className="celebrities-chat-section-title">
                 <i className="fa-solid fa-clock" />
                 Pending Requests ({pendingRequests.length})
               </h3>
-              <div className="cey-chat__requests">
+              <div className="celebrities-chat-requests">
                 {pendingRequests.map(request => (
-                  <div key={request.id} className="cey-chat__request">
-                    <div className="cey-chat__request-avatar">
+                  <div key={request.id} className="celebrities-chat-request">
+                    <div className="celebrities-chat-request-avatar">
                       <img src={request.avatar} alt={request.name} />
                     </div>
-                    <div className="cey-chat__request-content">
-                      <h4 className="cey-chat__request-name">{request.name}</h4>
-                      <p className="cey-chat__request-message">{request.message}</p>
-                      <span className="cey-chat__request-time">{request.time}</span>
+                    <div className="celebrities-chat-request-content">
+                      <h4 className="celebrities-chat-request-name">{request.name}</h4>
+                      <p className="celebrities-chat-request-message">{request.message}</p>
+                      <span className="celebrities-chat-request-time">{request.time}</span>
                     </div>
-                    <div className="cey-chat__request-actions">
+                    <div className="celebrities-chat-request-actions">
                       <button 
-                        className="cey-btn cey-btn--small cey-btn--accept"
+                        className="celebrities-chat-btn-accept"
                         onClick={() => acceptChatRequest(request.id)}
                       >
                         <i className="fa-solid fa-check" />
                       </button>
                       <button 
-                        className="cey-btn cey-btn--small cey-btn--decline"
+                        className="celebrities-chat-btn-decline"
                         onClick={() => declineChatRequest(request.id)}
                       >
                         <i className="fa-solid fa-times" />
@@ -345,41 +345,41 @@ const CelebritiesChat = () => {
           )}
 
           {/* Chat List */}
-          <div className="cey-chat__section">
-            <h3 className="cey-chat__section-title">
+          <div className="celebrities-chat-section">
+            <h3 className="celebrities-chat-section-title">
               <i className="fa-solid fa-comments" />
               {chatType === 'one-to-one' ? 'Individual Chats' : 'Group Chats'}
             </h3>
-            <div className="cey-chat__list">
+            <div className="celebrities-chat-list">
               {chats
                 .filter(chat => chat.type === chatType)
                 .map(chat => (
                   <div 
                     key={chat.id} 
-                    className={`cey-chat__item ${activeChat?.id === chat.id ? 'active' : ''}`}
+                    className={`celebrities-chat-item ${activeChat?.id === chat.id ? 'active' : ''}`}
                     onClick={() => setActiveChat(chat)}
                   >
-                    <div className="cey-chat__item-avatar">
+                    <div className="celebrities-chat-item-avatar">
                       <img src={chat.avatar} alt={chat.name} />
                       <div 
-                        className="cey-chat__item-status"
+                        className="celebrities-chat-item-status"
                         style={{ backgroundColor: getStatusColor(chat.status) }}
                       />
                     </div>
-                    <div className="cey-chat__item-content">
-                      <div className="cey-chat__item-header">
-                        <h4 className="cey-chat__item-name">{chat.name}</h4>
-                        <span className="cey-chat__item-time">{chat.lastMessageTime}</span>
+                    <div className="celebrities-chat-item-content">
+                      <div className="celebrities-chat-item-header">
+                        <h4 className="celebrities-chat-item-name">{chat.name}</h4>
+                        <span className="celebrities-chat-item-time">{chat.lastMessageTime}</span>
                       </div>
-                      <p className="cey-chat__item-message">{chat.lastMessage}</p>
+                      <p className="celebrities-chat-item-message">{chat.lastMessage}</p>
                       {chat.participants && (
-                        <span className="cey-chat__item-participants">
+                        <span className="celebrities-chat-item-participants">
                           {chat.participants} participants
                         </span>
                       )}
                     </div>
                     {chat.unreadCount > 0 && (
-                      <div className="cey-chat__item-badge">{chat.unreadCount}</div>
+                      <div className="celebrities-chat-item-badge">{chat.unreadCount}</div>
                     )}
                   </div>
                 ))}
@@ -388,36 +388,36 @@ const CelebritiesChat = () => {
         </div>
 
         {/* Chat Main Area */}
-        <div className="cey-chat__main">
+        <div className="celebrities-chat-main">
           {activeChat ? (
             <>
               {/* Chat Header */}
-              <div className="cey-chat__main-header">
-                <div className="cey-chat__main-user">
-                  <div className="cey-chat__main-avatar">
+              <div className="celebrities-chat-main-header">
+                <div className="celebrities-chat-main-user">
+                  <div className="celebrities-chat-main-avatar">
                     <img src={activeChat.avatar} alt={activeChat.name} />
                     <div 
-                      className="cey-chat__main-status"
+                      className="celebrities-chat-main-status"
                       style={{ backgroundColor: getStatusColor(activeChat.status) }}
                     />
                   </div>
-                  <div className="cey-chat__main-info">
-                    <h3 className="cey-chat__main-name">{activeChat.name}</h3>
-                    <span className="cey-chat__main-status-text">
+                  <div className="celebrities-chat-main-info">
+                    <h3 className="celebrities-chat-main-name">{activeChat.name}</h3>
+                    <span className="celebrities-chat-main-status-text">
                       {activeChat.status === 'live' ? 'Live Now' : 
                        activeChat.status === 'online' ? 'Online' : 'Offline'}
                     </span>
                   </div>
                 </div>
-                <div className="cey-chat__main-actions">
-                  <button className="cey-btn cey-btn--icon">
+                <div className="celebrities-chat-main-actions">
+                  <button className="celebrities-chat-btn-icon">
                     <i className="fa-solid fa-phone" />
                   </button>
-                  <button className="cey-btn cey-btn--icon">
+                  <button className="celebrities-chat-btn-icon">
                     <i className="fa-solid fa-video" />
                   </button>
                   <button 
-                    className="cey-btn cey-btn--icon"
+                    className="celebrities-chat-btn-icon"
                     onClick={() => setShowProfilePanel(!showProfilePanel)}
                   >
                     <i className="fa-solid fa-ellipsis-v" />
